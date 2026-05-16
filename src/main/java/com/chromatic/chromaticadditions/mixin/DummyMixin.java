@@ -1,4 +1,4 @@
-package com.example.examplemod.mixin;
+package com.chromatic.chromaticadditions.mixin;
 
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 
