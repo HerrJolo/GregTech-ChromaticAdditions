@@ -23,17 +23,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
-
 @Mod(ChromaticAdditions.MOD_ID)
 @SuppressWarnings("removal")
 public class ChromaticAdditions {
 
     public static final String MOD_ID = "examplemod";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate EXAMPLE_REGISTRATE = GTRegistrate.create(ChromaticAdditions.MOD_ID);
+    public static GTRegistrate HERRJOLO_REGISTRATE = GTRegistrate.create(ChromaticAdditions.MOD_ID);
 
     public ChromaticAdditions() {
+        ChromaticAdditions.init();
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -51,12 +51,11 @@ public class ChromaticAdditions {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
+
+        HERRJOLO_REGISTRATE.registerRegistrate();
     }
 
-    public static void init() {
-        REGISTRATE.registerRegistrate();
-    }
-
+    private static void init() {}
 
 
     private void commonSetup(final FMLCommonSetupEvent event) {

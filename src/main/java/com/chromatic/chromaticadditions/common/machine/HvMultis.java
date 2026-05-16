@@ -16,7 +16,7 @@ import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 
 public class HvMultis {
     
-    public static void init() {}
+
 
     public static final MultiblockMachineDefinition Extended_Centrifuge = REGISTRATE
             .multiblock("industrial_centrifuge", WorkableElectricMultiblockMachine::new)
@@ -45,9 +45,9 @@ public class HvMultis {
             })
             .workableCasingModel(GTCEu.id("block/casing/solid/machine_casing_solid_steel"),
                         GTCEu.id("block/multiblock/advanced_processing_array"))
-                                .register();
+            .register();
 
 
 
-
+    public static void init() {}
 }

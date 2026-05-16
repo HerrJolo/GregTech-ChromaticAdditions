@@ -14,7 +14,7 @@ public class GregTech_Chromatic_Additions implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return ChromaticAdditions.EXAMPLE_REGISTRATE;
+        return ChromaticAdditions.HERRJOLO_REGISTRATE;
     }
 
     @Override
