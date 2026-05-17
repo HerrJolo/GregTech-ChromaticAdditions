@@ -1,3 +1,13 @@
 {
-  "block.chromatic_additions.liquid_working_casing": "Liquid Working Casing"
+  "block.chromatic_additions.electric_assembly_line": "Electric Assembly Line",
+  "block.chromatic_additions.em_casing": "Electronic Shielding Casing",
+  "block.chromatic_additions.industrial_centrifuge": "Industrial Centrifuge",
+  "block.chromatic_additions.industrial_electrolyze": "Industrial Electrolyze",
+  "block.chromatic_additions.industrial_macerator": "Industrial Macerator",
+  "block.chromatic_additions.industrial_squeezer": "Industrial Squeezer",
+  "block.chromatic_additions.industrial_thermal_centrifuge": "Industrial Thermal Centrifuge",
+  "block.chromatic_additions.liquid_working_casing": "Liquid Working Casing",
+  "block.chromatic_additions.metal_former": "Metal Former",
+  "block.chromatic_additions.mixatron": "Mixatron",
+  "block.chromatic_additions.wet_ore_processor": "Wet Ore Processor"
 }

@@ -1,7 +1,10 @@
 package com.chromatic.chromaticadditions;
 
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
+import com.chromatic.chromaticadditions.common.machine.Em_Lines;
 import com.chromatic.chromaticadditions.common.machine.HvMultis;
+import com.chromatic.chromaticadditions.common.machine.HvMultisOreProc;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -19,7 +22,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -138,6 +140,7 @@ public class ChromaticAdditions {
      * @param event
      */
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
+        ChromaticRecepieTypes.init();
         // CustomRecipeTypes.init();
     }
 
@@ -152,7 +155,9 @@ public class ChromaticAdditions {
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
+        HvMultisOreProc.init();
         HvMultis.init();
+        Em_Lines.init();
     }
 
     /**

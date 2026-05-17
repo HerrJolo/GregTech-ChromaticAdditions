@@ -42,4 +42,8 @@ public class CasingBlocks {
     public static BlockEntry<Block> LIQUID_WORKING_CASING = registerSimpleBlock(
             "Liquid Working Casing", "liquid_working_casing",
             "liquid_working_casing", BlockItem::new);
+
+    public static BlockEntry<Block> EM_CASING = registerSimpleBlock(
+            "Electronic Shielding Casing", "em_casing",
+            "emcassing", BlockItem::new);
 }
