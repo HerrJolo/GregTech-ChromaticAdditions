@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chromatic_additions:block/liquid_working_casing"
+  }
+}

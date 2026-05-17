@@ -77,7 +77,6 @@ public class ChromaticAdditions {
     }
 
     private static void init() {
-        REGISTRATE.registerRegistrate();
         CasingBlocks.init();
     }
 
