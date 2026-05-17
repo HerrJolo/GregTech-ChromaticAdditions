@@ -19,7 +19,6 @@ public class ChromaticRecepieTypes {
     public static GTRecipeType EMLINE_SMDINDUCTOR;
 
 
-
     public static void init() {
         EMLINE = register("electric_assembly_line", MULTIBLOCK)
                 .setEUIO(IO.IN)
@@ -27,9 +26,42 @@ public class ChromaticRecepieTypes {
                 .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.ASSEMBLER);
+
+
+        EMLINE_SMDDIODE = register("smd_diode_manufactur", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(6, 3, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.ASSEMBLER);
+
+        EMLINE_SMDCAPAICTOR = register("smd_capacitor_manufactur", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(6, 3, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.ASSEMBLER);
+
+        EMLINE_SMDRESSISITOR = register("smd_ressistor_manufactur", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(6, 3, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.ASSEMBLER);
+
+        EMLINE_SMDTRANSISTOR = register("smd_transistor_manufactur", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(6, 3, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.ASSEMBLER);
+
+        EMLINE_SMDINDUCTOR = register("smd_inductor_manufactur", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(6, 3, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.ASSEMBLER);
+
     }
-
-
-
-
 }
