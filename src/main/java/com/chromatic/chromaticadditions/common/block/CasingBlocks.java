@@ -12,7 +12,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
-import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
+import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
+
 
 public class CasingBlocks {
 
@@ -21,7 +22,7 @@ public class CasingBlocks {
     private static @NotNull BlockEntry<Block> registerSimpleBlock(String name, String id, String texture,
                                                                   NonNullBiFunction<Block, Item.Properties, ? extends BlockItem> func) {
 
-        return REGISTRATE
+        return HERRJOLO_REGISTRATE
                 .block(id, Block::new)
                 .initialProperties(() -> Blocks.IRON_BLOCK)
                 .tag(BlockTags.MINEABLE_WITH_PICKAXE)
