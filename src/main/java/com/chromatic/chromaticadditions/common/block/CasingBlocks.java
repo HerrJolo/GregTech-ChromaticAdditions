@@ -1,0 +1,44 @@
+package com.chromatic.chromaticadditions.common.block;
+
+
+import com.chromatic.chromaticadditions.ChromaticAdditions;
+import com.gregtechceu.gtceu.data.recipe.CustomTags;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.nullness.NonNullBiFunction;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import org.jetbrains.annotations.NotNull;
+
+import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
+
+public class CasingBlocks {
+
+    public static void init(){}
+
+    private static @NotNull BlockEntry<Block> registerSimpleBlock(String name, String id, String texture,
+                                                                  NonNullBiFunction<Block, Item.Properties, ? extends BlockItem> func) {
+
+        return REGISTRATE
+                .block(id, Block::new)
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WRENCH)
+                .properties(p -> p.isValidSpawn((state, level, pos, ent) -> false)
+                        .strength(5.0f, 6.0f)
+                        .requiresCorrectToolForDrops())
+                .blockstate((ctx, prov) -> prov.simpleBlock(ctx.getEntry(),
+                        prov.models().cubeAll(ctx.getName(), ChromaticAdditions.id("block/" + texture))))
+                .lang(name)
+                .item(func)
+                .build()
+                .register();
+
+    }
+
+    public static BlockEntry<Block> LIQUID_WORKING_CASING = registerSimpleBlock(
+            "Liquid Working Casing", "liquid_working_casing",
+            "liquid_working_casing", BlockItem::new);
+}

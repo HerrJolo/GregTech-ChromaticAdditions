@@ -1,5 +1,6 @@
 package com.chromatic.chromaticadditions;
 
+import com.chromatic.chromaticadditions.common.block.CasingBlocks;
 import com.chromatic.chromaticadditions.common.machine.HvMultis;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -10,10 +11,15 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
+import com.gregtechceu.gtceu.common.data.GTBlocks;
+import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,13 +29,28 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
+
 @Mod(ChromaticAdditions.MOD_ID)
 @SuppressWarnings("removal")
 public class ChromaticAdditions {
 
-    public static final String MOD_ID = "examplemod";
+    public static final String MOD_ID = "chromatic_additions";
     public static final Logger LOGGER = LogManager.getLogger();
     public static GTRegistrate HERRJOLO_REGISTRATE = GTRegistrate.create(ChromaticAdditions.MOD_ID);
+
+
+    public static RegistryEntry<CreativeModeTab> CHROMATIC_TAB = REGISTRATE
+            .defaultCreativeTab(ChromaticAdditions.MOD_ID,
+                    builder -> builder
+                            .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(ChromaticAdditions.MOD_ID,
+                                    REGISTRATE))
+                            .title(REGISTRATE.addLang("itemGroup", ChromaticAdditions.id("creative_tab"),
+                                    "ChromaticAdditions (CoreMod)"))
+                            .icon(GTBlocks.CASING_BRONZE_PIPE::asStack)
+                            .build())
+            .register();
+
 
     public ChromaticAdditions() {
         ChromaticAdditions.init();
@@ -55,8 +76,10 @@ public class ChromaticAdditions {
         HERRJOLO_REGISTRATE.registerRegistrate();
     }
 
-    private static void init() {}
-
+    private static void init() {
+        REGISTRATE.registerRegistrate();
+        CasingBlocks.init();
+    }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
