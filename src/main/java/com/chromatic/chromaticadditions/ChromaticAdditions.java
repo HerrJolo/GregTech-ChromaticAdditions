@@ -5,6 +5,8 @@ import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 import com.chromatic.chromaticadditions.common.machine.Em_Lines;
 import com.chromatic.chromaticadditions.common.machine.HvMultis;
 import com.chromatic.chromaticadditions.common.machine.HvMultisOreProc;
+import com.chromatic.chromaticadditions.common.machine.PartRegistry;
+import com.chromatic.chromaticadditions.common.machine.multiblock.part.SingleDataAccesHatch;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -76,6 +78,7 @@ public class ChromaticAdditions {
         MinecraftForge.EVENT_BUS.register(this);
 
         HERRJOLO_REGISTRATE.registerRegistrate();
+        REGISTRATE.registerRegistrate();
     }
 
     private static void init() {
@@ -158,6 +161,7 @@ public class ChromaticAdditions {
         HvMultisOreProc.init();
         HvMultis.init();
         Em_Lines.init();
+        PartRegistry.init();
     }
 
     /**
