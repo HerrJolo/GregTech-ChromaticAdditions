@@ -46,4 +46,5 @@ public class CasingBlocks {
     public static BlockEntry<Block> EM_CASING = registerSimpleBlock(
             "Electronic Shielding Casing", "em_casing",
             "emcassing", BlockItem::new);
+
 }

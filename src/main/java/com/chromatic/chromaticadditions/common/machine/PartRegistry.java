@@ -33,7 +33,7 @@ public static void init() {}
             .register();
 
         @NotNull
-        private static MachineBuilder <MachineDefinition> registerDataHatch(String name, String displayName, int tier,
+        private static MachineBuilder <MachineDefinition, ?> registerDataHatch(String name, String displayName, int tier,
                                                                                        Function<IMachineBlockEntity, MetaMachine> constructor,
                                                                                        String model, PartAbility... abilities) {
 
