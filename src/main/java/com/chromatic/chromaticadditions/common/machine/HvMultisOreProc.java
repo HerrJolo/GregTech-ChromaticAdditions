@@ -2,6 +2,7 @@ package com.chromatic.chromaticadditions.common.machine;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
@@ -20,10 +21,12 @@ import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class HvMultisOreProc {
-    
 
+    static {
+        HERRJOLO_REGISTRATE.creativeModeTab(() -> ChromaticAdditions.CHROMATIC_TAB);
+    }
 
-    //Centrifuge
+    // Centrifuge
     public static final MultiblockMachineDefinition Extended_Centrifuge = HERRJOLO_REGISTRATE
             .multiblock("industrial_centrifuge", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -50,10 +53,10 @@ public class HvMultisOreProc {
                         .build();
             })
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
-                        GTCEu.id("block/multiblock/advanced_processing_array"))
+                    GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-    //Macerator
+    // Macerator
     public static final MultiblockMachineDefinition Extended_Macerator = HERRJOLO_REGISTRATE
             .multiblock("industrial_macerator", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -61,7 +64,7 @@ public class HvMultisOreProc {
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
             .appearanceBlock(CASING_STEEL_SOLID)
             .pattern(definition -> {
-                 return FactoryBlockPattern.start()
+                return FactoryBlockPattern.start()
                         .aisle("CCC", "CSC", "CCC")
                         .aisle("CFC", "FGF", "CFC")
                         .aisle("CFC", "FGF", "CFC")
@@ -78,14 +81,13 @@ public class HvMultisOreProc {
                                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setExactLimit(1).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1)))
-            .build();
+                        .build();
             })
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
-                        GTCEu.id("block/multiblock/advanced_processing_array"))
-                .register();
+                    GTCEu.id("block/multiblock/advanced_processing_array"))
+            .register();
 
-
-    //Extractor
+    // Extractor
     public static final MultiblockMachineDefinition Extended_Extractor = HERRJOLO_REGISTRATE
             .multiblock("industrial_squeezer", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -108,14 +110,13 @@ public class HvMultisOreProc {
                                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setExactLimit(1).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1)))
-            .build();
+                        .build();
             })
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-
-    //Thermal_Centrifuge
+    // Thermal_Centrifuge
     public static final MultiblockMachineDefinition Extended_Thermal_Centrifuge = HERRJOLO_REGISTRATE
             .multiblock("industrial_thermal_centrifuge", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -146,11 +147,11 @@ public class HvMultisOreProc {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-
     public static final MultiblockMachineDefinition Extended_WASHER = HERRJOLO_REGISTRATE
             .multiblock("wet_ore_processor", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
-            .recipeTypes(GTRecipeTypes.ORE_WASHER_RECIPES, GTRecipeTypes.SIFTER_RECIPES, GTRecipeTypes.CHEMICAL_BATH_RECIPES)
+            .recipeTypes(GTRecipeTypes.ORE_WASHER_RECIPES, GTRecipeTypes.SIFTER_RECIPES,
+                    GTRecipeTypes.CHEMICAL_BATH_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
             .appearanceBlock(CasingBlocks.LIQUID_WORKING_CASING)
             .pattern(definition -> {
@@ -176,7 +177,6 @@ public class HvMultisOreProc {
             .workableCasingModel(ChromaticAdditions.id("block/liquid_working_casing"),
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
-
 
     public static final MultiblockMachineDefinition Extended_ElECTROLYCER = HERRJOLO_REGISTRATE
             .multiblock("industrial_electrolyze", WorkableElectricMultiblockMachine::new)
@@ -208,8 +208,6 @@ public class HvMultisOreProc {
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
-
-
 
     public static void init() {}
 }

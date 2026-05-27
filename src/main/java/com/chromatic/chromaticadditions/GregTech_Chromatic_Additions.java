@@ -1,6 +1,7 @@
 package com.chromatic.chromaticadditions;
 
 import com.chromatic.chromaticadditions.common.data.Em_Line_Recepies;
+
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
@@ -23,7 +24,6 @@ public class GregTech_Chromatic_Additions implements IGTAddon {
 
     @Override
     public String addonModId() {
-
         return ChromaticAdditions.MOD_ID;
     }
 

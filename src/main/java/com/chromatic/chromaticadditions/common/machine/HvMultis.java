@@ -2,6 +2,7 @@ package com.chromatic.chromaticadditions.common.machine;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
@@ -11,23 +12,17 @@ import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
-import com.gregtechceu.gtceu.common.data.GTBlocks;
-import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
-import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.frameGt;
+import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static net.minecraft.world.level.block.Blocks.IRON_BLOCK;
 
-
 public class HvMultis {
 
-
-
-
-    //Mixer
+    // Mixer
     public static final MultiblockMachineDefinition Extended_MIXIER = HERRJOLO_REGISTRATE
             .multiblock("mixatron", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -60,8 +55,7 @@ public class HvMultis {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-
-    //Mixer
+    // Mixer
     public static final MultiblockMachineDefinition Extended_EXTRUDER = HERRJOLO_REGISTRATE
             .multiblock("metal_former", CoilWorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -95,7 +89,5 @@ public class HvMultis {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-    public static void init() {
-
-    }
+    public static void init() {}
 }

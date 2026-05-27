@@ -1,27 +1,36 @@
 package com.chromatic.chromaticadditions.common.block;
 
-
 import com.chromatic.chromaticadditions.ChromaticAdditions;
+
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
-import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.nullness.NonNullBiFunction;
+
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.nullness.NonNullBiFunction;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 
-
 public class CasingBlocks {
 
-    public static void init(){}
+    public static void init() {}
+
+    static {
+        HERRJOLO_REGISTRATE.creativeModeTab(() -> ChromaticAdditions.CHROMATIC_TAB);
+    }
 
     private static @NotNull BlockEntry<Block> registerSimpleBlock(String name, String id, String texture,
                                                                   NonNullBiFunction<Block, Item.Properties, ? extends BlockItem> func) {
-
         return HERRJOLO_REGISTRATE
                 .block(id, Block::new)
                 .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -36,7 +45,6 @@ public class CasingBlocks {
                 .item(func)
                 .build()
                 .register();
-
     }
 
     public static BlockEntry<Block> LIQUID_WORKING_CASING = registerSimpleBlock(
@@ -46,5 +54,5 @@ public class CasingBlocks {
     public static BlockEntry<Block> EM_CASING = registerSimpleBlock(
             "Electronic Shielding Casing", "em_casing",
             "emcassing", BlockItem::new);
-
 }
+

@@ -4,7 +4,6 @@ import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 
 public class ChromaticPartAbility extends PartAbility {
 
-
     public ChromaticPartAbility(String name) {
         super(name);
     }
