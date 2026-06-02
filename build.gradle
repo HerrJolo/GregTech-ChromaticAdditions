@@ -129,7 +129,7 @@ legacyForge {
 }
 jar {
     manifest.attributes([
-            "MixinConfigs": "chromatic_additions.mixins.json"
+            "MixinConfigs": "chromaticadditions.mixins.json"
     ])
 }
 
@@ -142,17 +142,29 @@ dependencies {
     annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
 
     // JEI, EMI, Jade
-    //modCompileOnly("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
-    //modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    //modRuntimeOnly("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-    //modRuntimeOnly("dev.emi:emi-forge:${emi_version}+${minecraft_version} ,AFTER")
-    //modRuntimeOnly("curse.maven:jade-324717:5390389")
+    modCompileOnly("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    modRuntimeOnly("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    modRuntimeOnly("dev.emi:emi-forge:${emi_version}+${minecraft_version}")
+    modRuntimeOnly("curse.maven:jade-324717:5390389")
 
     // GregTech and dependencies
     modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtceu_version}:slim") { transitive = false }
     modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
+
+    //THX PHEONIX
+    //modImplementation("curse.maven:phoenixs-chromatic-colors-1483210:7985373")
+
+    //CustomDependencies
+    modImplementation("curse.maven:ad-astra-635042:6262032")
+    //modRuntimeOnly("curse.maven:kubejs-aisle-tool-1236291:7543948")
+
+    //Dependency Of The Dependecy
+    modImplementation("curse.maven:resourceful-lib-570073:5659871")
+    modImplementation("curse.maven:resourceful-config-714059:6231176")
+    modImplementation("curse.maven:botarium-704113:5486070")
 
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'

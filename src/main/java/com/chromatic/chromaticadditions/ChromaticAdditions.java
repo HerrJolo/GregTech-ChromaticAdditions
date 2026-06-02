@@ -1,11 +1,12 @@
 package com.chromatic.chromaticadditions;
 
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+import com.chromatic.chromaticadditions.common.data.ChromaticMaterials;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
-import com.chromatic.chromaticadditions.common.machine.Em_Lines;
-import com.chromatic.chromaticadditions.common.machine.HvMultis;
-import com.chromatic.chromaticadditions.common.machine.HvMultisOreProc;
-import com.chromatic.chromaticadditions.common.machine.PartRegistry;
+import com.chromatic.chromaticadditions.common.item.ChromaticItems;
+import com.chromatic.chromaticadditions.common.item.NanoTraverBoots;
+import com.chromatic.chromaticadditions.common.machine.multiblock.part.PartRegistry;
+import com.chromatic.chromaticadditions.common.machine.multiblock.structurs.*;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -15,13 +16,11 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
-import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -43,17 +42,21 @@ public class ChromaticAdditions {
     public static final Logger LOGGER = LogManager.getLogger();
     public static GTRegistrate HERRJOLO_REGISTRATE = GTRegistrate.create(ChromaticAdditions.MOD_ID);
 
-    public static RegistryEntry<CreativeModeTab> CHROMATIC_TAB = HERRJOLO_REGISTRATE
+    public static RegistryEntry<CreativeModeTab> CHROMATIC_ITEMS_TAB = HERRJOLO_REGISTRATE
             .defaultCreativeTab(ChromaticAdditions.MOD_ID,
                     builder -> builder
                             .displayItems(
                                     new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(ChromaticAdditions.MOD_ID,
                                             HERRJOLO_REGISTRATE))
                             .title(REGISTRATE.addLang("itemGroup", ChromaticAdditions.id("creative_tab"),
-                                    "ChromaticAdditions (CoreMod)"))
-                            .icon(GTBlocks.CASING_BRONZE_PIPE::asStack)
+                                    "ChromaticAdditions Items (CoreMod)"))
+                            .icon(ChromaticItems.IV_MINING_CIRCUITE1::asStack)
                             .build())
             .register();
+
+    static {
+        HERRJOLO_REGISTRATE.creativeModeTab(() -> ChromaticAdditions.CHROMATIC_ITEMS_TAB);
+    }
 
     public ChromaticAdditions() {
         ChromaticAdditions.init();
@@ -82,13 +85,12 @@ public class ChromaticAdditions {
 
     private static void init() {
         CasingBlocks.init();
+        ChromaticItems.init();
+        NanoTraverBoots.init();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
-            LOGGER.info("Look, I found a {}!", Items.DIAMOND);
-        });
+        event.enqueueWork(() -> {});
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -123,7 +125,8 @@ public class ChromaticAdditions {
      * @param event
      */
     private void addMaterials(MaterialEvent event) {
-        // CustomMaterials.init();
+        ChromaticMaterials.init();
+        // ChromaticMaterials.init();
     }
 
     /**
@@ -159,6 +162,8 @@ public class ChromaticAdditions {
         HvMultis.init();
         Em_Lines.init();
         PartRegistry.init();
+        DeepOreDrillingMachines.init();
+        UpgradedMultis.init();
     }
 
     /**

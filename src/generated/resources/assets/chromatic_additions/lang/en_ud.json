@@ -1,5 +1,6 @@
 {
   "block.chromatic_additions.advanced_electric_assembly_line": "ǝuıꞀ ʎןqɯǝssⱯ ɔıɹʇɔǝןƎ pǝɔuɐʌpⱯ",
+  "block.chromatic_additions.drilling_casing": "buısɐƆ ǝdıԀ buıןןıɹᗡ",
   "block.chromatic_additions.electric_assembly_line": "ǝuıꞀ ʎןqɯǝssⱯ ɔıɹʇɔǝןƎ",
   "block.chromatic_additions.em_casing": "buısɐƆ buıpןǝıɥS ɔıuoɹʇɔǝןƎ",
   "block.chromatic_additions.industrial_centrifuge": "ǝbnɟıɹʇuǝƆ ןɐıɹʇsnpuI",
@@ -7,9 +8,22 @@
   "block.chromatic_additions.industrial_macerator": "ɹoʇɐɹǝɔɐW ןɐıɹʇsnpuI",
   "block.chromatic_additions.industrial_squeezer": "ɹǝzǝǝnbS ןɐıɹʇsnpuI",
   "block.chromatic_additions.industrial_thermal_centrifuge": "ǝbnɟıɹʇuǝƆ ןɐɯɹǝɥ⟘ ןɐıɹʇsnpuI",
+  "block.chromatic_additions.large_sorter": "ɹǝʇɹoS ǝbɹɐꞀƖ§",
   "block.chromatic_additions.liquid_working_casing": "buısɐƆ buıʞɹoM pınbıꞀ",
   "block.chromatic_additions.metal_former": "ɹǝɯɹoℲ ןɐʇǝW",
   "block.chromatic_additions.mixatron": "uoɹʇɐxıW",
-  "block.chromatic_additions.nether_shroom": "ɯooɹɥS ɹǝɥʇǝN",
-  "block.chromatic_additions.wet_ore_processor": "ɹossǝɔoɹԀ ǝɹO ʇǝM"
+  "block.chromatic_additions.precision_assembler": "ɹǝןqɯǝssⱯ uoısıɔǝɹԀ",
+  "block.chromatic_additions.sorter": "ɹǝʇɹoS9§",
+  "block.chromatic_additions.the_miner": "ɹoʇɔɐɹʇxƎ ʇısodǝᗡ ɹǝuıW ɯoıᗺ ǝbɹɐꞀϛ§",
+  "block.chromatic_additions.wet_ore_processor": "ɹossǝɔoɹԀ ǝɹO ʇǝM",
+  "item.chromatic_additions.drill_head": "pɐǝH ןןıɹᗡ",
+  "item.chromatic_additions.ev_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW ΛƎ",
+  "item.chromatic_additions.hv_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW ΛH",
+  "item.chromatic_additions.iv_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW ΛI",
+  "item.chromatic_additions.luv_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW ΛnꞀ",
+  "item.chromatic_additions.mv_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW ΛW",
+  "item.chromatic_additions.nano_gas_mask": "ʞsɐW sɐ⅁ ™ǝןɔsnWouɐN",
+  "item.chromatic_additions.nano_tarveler_boots": "sʇooᗺ ɹǝןǝʌɐɹ⟘ ™ǝןɔsnWouɐN",
+  "item.chromatic_additions.uv_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW Λ∩",
+  "item.chromatic_additions.zpm_mining_circuite_1": "ǝʇınɔɹıƆ buıuıW WԀZ"
 }

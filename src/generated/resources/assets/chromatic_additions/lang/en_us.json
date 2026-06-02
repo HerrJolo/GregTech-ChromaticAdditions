@@ -1,5 +1,6 @@
 {
   "block.chromatic_additions.advanced_electric_assembly_line": "Advanced Electric Assembly Line",
+  "block.chromatic_additions.drilling_casing": "Drilling Pipe Casing",
   "block.chromatic_additions.electric_assembly_line": "Electric Assembly Line",
   "block.chromatic_additions.em_casing": "Electronic Shielding Casing",
   "block.chromatic_additions.industrial_centrifuge": "Industrial Centrifuge",
@@ -7,9 +8,22 @@
   "block.chromatic_additions.industrial_macerator": "Industrial Macerator",
   "block.chromatic_additions.industrial_squeezer": "Industrial Squeezer",
   "block.chromatic_additions.industrial_thermal_centrifuge": "Industrial Thermal Centrifuge",
+  "block.chromatic_additions.large_sorter": "§1Large Sorter",
   "block.chromatic_additions.liquid_working_casing": "Liquid Working Casing",
   "block.chromatic_additions.metal_former": "Metal Former",
   "block.chromatic_additions.mixatron": "Mixatron",
-  "block.chromatic_additions.nether_shroom": "Nether Shroom",
-  "block.chromatic_additions.wet_ore_processor": "Wet Ore Processor"
+  "block.chromatic_additions.precision_assembler": "Precision Assembler",
+  "block.chromatic_additions.sorter": "§6Sorter",
+  "block.chromatic_additions.the_miner": "§5Large Biom Miner Deposit Extractor",
+  "block.chromatic_additions.wet_ore_processor": "Wet Ore Processor",
+  "item.chromatic_additions.drill_head": "Drill Head",
+  "item.chromatic_additions.ev_mining_circuite_1": "EV Mining Circuite",
+  "item.chromatic_additions.hv_mining_circuite_1": "HV Mining Circuite",
+  "item.chromatic_additions.iv_mining_circuite_1": "IV Mining Circuite",
+  "item.chromatic_additions.luv_mining_circuite_1": "LuV Mining Circuite",
+  "item.chromatic_additions.mv_mining_circuite_1": "MV Mining Circuite",
+  "item.chromatic_additions.nano_gas_mask": "NanoMuscle™ Gas Mask",
+  "item.chromatic_additions.nano_tarveler_boots": "NanoMuscle™ Traveler Boots",
+  "item.chromatic_additions.uv_mining_circuite_1": "UV Mining Circuite",
+  "item.chromatic_additions.zpm_mining_circuite_1": "ZPM Mining Circuite"
 }

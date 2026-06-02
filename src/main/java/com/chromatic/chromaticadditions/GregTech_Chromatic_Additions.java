@@ -1,6 +1,8 @@
 package com.chromatic.chromaticadditions;
 
-import com.chromatic.chromaticadditions.common.data.Em_Line_Recepies;
+import com.chromatic.chromaticadditions.common.BedRockOres.OverworldOreVeins;
+import com.chromatic.chromaticadditions.common.data.recepies.BiomMinerRecepies;
+import com.chromatic.chromaticadditions.common.data.recepies.SorterRecipes;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
@@ -34,13 +36,18 @@ public class GregTech_Chromatic_Additions implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        Em_Line_Recepies.init(provider);
-        // CustomRecipes.init(provider);
+        BiomMinerRecepies.init(provider);
+        SorterRecipes.init(provider);
     }
 
     @Override
     public void registerElements() {
         // CustomElements.init();
+    }
+
+    @Override
+    public void registerBedrockOreVeins() {
+        OverworldOreVeins.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

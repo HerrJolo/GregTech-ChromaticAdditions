@@ -1,4 +1,4 @@
-package com.chromatic.chromaticadditions.common.machine;
+package com.chromatic.chromaticadditions.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 

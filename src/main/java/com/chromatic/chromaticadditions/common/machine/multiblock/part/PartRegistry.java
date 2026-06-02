@@ -1,6 +1,4 @@
-package com.chromatic.chromaticadditions.common.machine;
-
-import com.chromatic.chromaticadditions.ChromaticAdditions;
+package com.chromatic.chromaticadditions.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -20,10 +18,6 @@ import static com.gregtechceu.gtceu.api.GTValues.MV;
 import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 
 public class PartRegistry {
-
-    static {
-        REGISTRATE.creativeModeTab(() -> ChromaticAdditions.CHROMATIC_TAB);
-    }
 
     public static void init() {}
 

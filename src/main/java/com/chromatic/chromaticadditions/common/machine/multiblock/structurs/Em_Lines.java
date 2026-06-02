@@ -1,7 +1,8 @@
-package com.chromatic.chromaticadditions.common.machine;
+package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
+import com.chromatic.chromaticadditions.common.machine.multiblock.part.ChromaticPartAbility;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;

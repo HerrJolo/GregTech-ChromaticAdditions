@@ -15,6 +15,9 @@ public class ChromaticRecepieTypes {
 
     public static GTRecipeType EMLINE;
     public static GTRecipeType ADVANCED_EMLINE;
+    public static GTRecipeType SORTER;
+    public static GTRecipeType THEMINER;
+    public static GTRecipeType PRECISONASSEMBLER;
 
     public static void init() {
         EMLINE = register("electric_assembly_line", MULTIBLOCK)
@@ -31,6 +34,28 @@ public class ChromaticRecepieTypes {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setHasResearchSlot(true)
                 .onRecipeBuild(ResearchManager::createDefaultResearchRecipe)
+                .setSound(GTSoundEntries.ASSEMBLER);
+
+        SORTER = register("Sortiting", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(2, 9, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .onRecipeBuild(ResearchManager::createDefaultResearchRecipe)
+                .setSound(GTSoundEntries.CENTRIFUGE);
+
+        THEMINER = register("Biome_Miner", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(2, 1, 1, 0)
+                .setSlotOverlay(false, false, GuiTextures.HAMMER_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.MACERATOR);
+
+        PRECISONASSEMBLER = register("Precison_Assembeling", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(9, 1, 3, 0)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.ASSEMBLER);
     }
 }

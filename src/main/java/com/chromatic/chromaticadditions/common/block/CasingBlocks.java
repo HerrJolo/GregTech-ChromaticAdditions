@@ -12,11 +12,6 @@ import net.minecraft.world.level.block.Blocks;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiFunction;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
@@ -24,10 +19,6 @@ import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGIS
 public class CasingBlocks {
 
     public static void init() {}
-
-    static {
-        HERRJOLO_REGISTRATE.creativeModeTab(() -> ChromaticAdditions.CHROMATIC_TAB);
-    }
 
     private static @NotNull BlockEntry<Block> registerSimpleBlock(String name, String id, String texture,
                                                                   NonNullBiFunction<Block, Item.Properties, ? extends BlockItem> func) {
@@ -54,5 +45,8 @@ public class CasingBlocks {
     public static BlockEntry<Block> EM_CASING = registerSimpleBlock(
             "Electronic Shielding Casing", "em_casing",
             "emcassing", BlockItem::new);
-}
 
+    public static BlockEntry<Block> DRILLING_CASING = registerSimpleBlock(
+            "Drilling Pipe Casing", "drilling_casing",
+            "drilling_casing", BlockItem::new);
+}

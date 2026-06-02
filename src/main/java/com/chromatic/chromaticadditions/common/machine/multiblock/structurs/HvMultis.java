@@ -1,7 +1,8 @@
-package com.chromatic.chromaticadditions.common.machine;
+package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -12,6 +13,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
@@ -27,7 +29,7 @@ public class HvMultis {
             .multiblock("mixatron", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.MIXER_RECIPES)
-            .recipeModifiers()
+            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
             .appearanceBlock(CasingBlocks.LIQUID_WORKING_CASING)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
@@ -60,7 +62,7 @@ public class HvMultis {
             .multiblock("metal_former", CoilWorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.EXTRUDER_RECIPES)
-            .recipeModifiers()
+            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
             .appearanceBlock(CasingBlocks.LIQUID_WORKING_CASING)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
@@ -83,6 +85,37 @@ public class HvMultis {
                                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setPreviewCount(1).setExactLimit(1))
                                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1)))
+                        .build();
+            })
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
+                    GTCEu.id("block/multiblock/advanced_processing_array"))
+            .register();
+
+    // Precision Assembler
+    public static final MultiblockMachineDefinition PRECISION_ASSEMBLER = HERRJOLO_REGISTRATE
+            .multiblock("precision_assembler", CoilWorkableElectricMultiblockMachine::new)
+            .rotationState(RotationState.ALL)
+            .recipeTypes(ChromaticRecepieTypes.PRECISONASSEMBLER)
+            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
+            .appearanceBlock(CASING_STAINLESS_CLEAN)
+            .pattern(definition -> {
+                return FactoryBlockPattern.start()
+                        .aisle("IGGGI", "I   I", "I   I", "I   I", "GGGGG")
+                        .aisle("GGGGG", " TGT ", " TTT ", " TGT ", "GGGGG")
+                        .aisle("GGSGG", " GSG ", " TST ", " GSG ", "GGGGG")
+                        .aisle("GGGGG", " TGT ", " TTT ", " TGT ", "GGGGG")
+                        .aisle("IGKGI", "I   I", "I   I", "I   I", "IGMGI")
+                        .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+                        .where('M', Predicates.abilities(PartAbility.MAINTENANCE))
+                        .where('G', Predicates.blocks(CASING_STAINLESS_CLEAN.get())
+                                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+                                .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setPreviewCount(1).setExactLimit(1))
+                                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1)))
+                        .where(' ', Predicates.any())
+                        .where('I', Predicates.blocks(ChemicalHelper.getBlock(frameGt, BlueSteel)))
+                        .where('S', Predicates.blocks(CASING_STAINLESS_STEEL_GEARBOX.get()))
+                        .where('T', Predicates.blocks(CASING_TEMPERED_GLASS.get()))
                         .build();
             })
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),

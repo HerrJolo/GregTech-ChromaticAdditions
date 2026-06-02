@@ -1,7 +1,9 @@
-package com.chromatic.chromaticadditions.common.machine;
+package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
+import com.chromatic.chromaticadditions.common.data.ChromaticRecipeModefiers;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -15,6 +17,8 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
+import net.minecraft.network.chat.Component;
+
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.frameGt;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
@@ -22,27 +26,22 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class HvMultisOreProc {
 
-    static {
-        HERRJOLO_REGISTRATE.creativeModeTab(() -> ChromaticAdditions.CHROMATIC_TAB);
-    }
-
     // Centrifuge
     public static final MultiblockMachineDefinition Extended_Centrifuge = HERRJOLO_REGISTRATE
             .multiblock("industrial_centrifuge", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.CENTRIFUGE_RECIPES)
-            .recipeModifier(GTRecipeModifiers.OC_PERFECT)
+            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT, ChromaticRecipeModefiers.SIMPLE_PARALLEL.apply(4))
             .appearanceBlock(CASING_STEEL_SOLID)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
-                        .aisle("CCC", "CSC", "CCC")
-                        .aisle("CCC", "CGC", "CCC")
-                        .aisle("CCC", "CGC", "CCC")
-                        .aisle("CCC", "CGC", "CCC")
-                        .aisle("CCC", "CKC", "CMC")
+                        .aisle("CCCCC", "CCCCC", "CCCCC")
+                        .aisle("CCCCC", "RGGGS", "CCCCC")
+                        .aisle("CCCCC", "CKMCC", "CCCCC")
                         .where("K", Predicates.controller(Predicates.blocks(definition.get())))
                         .where("M", Predicates.abilities(PartAbility.MAINTENANCE))
                         .where("S", Predicates.abilities(PartAbility.MUFFLER))
+                        .where("R", Predicates.abilities(PartAbility.ROTOR_HOLDER))
                         .where("G", Predicates.blocks(CASING_STEEL_PIPE.get()))
                         .where("C", Predicates.blocks(CASING_STEEL_SOLID.get())
                                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
@@ -121,18 +120,17 @@ public class HvMultisOreProc {
             .multiblock("industrial_thermal_centrifuge", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.THERMAL_CENTRIFUGE_RECIPES)
-            .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
+            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT, ChromaticRecipeModefiers.SIMPLE_PARALLEL.apply(4))
             .appearanceBlock(CASING_STAINLESS_CLEAN)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
-                        .aisle("CCC", "CSC", "CCC")
-                        .aisle("CGC", "GPG", "CGC")
-                        .aisle("CGC", "GPG", "CGC")
-                        .aisle("CGC", "GPG", "CGC")
-                        .aisle("CCC", "CKC", "CMC")
+                        .aisle("CGGGC", "CCCCC", "CGGGC")
+                        .aisle("CCCCC", "RPPPS", "CCCCC")
+                        .aisle("CGGGC", "CKMCC", "CGGGC")
                         .where('K', Predicates.controller(Predicates.blocks(definition.get())))
                         .where('M', Predicates.abilities(PartAbility.MAINTENANCE))
                         .where('S', Predicates.abilities(PartAbility.MUFFLER))
+                        .where('R', Predicates.abilities(PartAbility.ROTOR_HOLDER))
                         .where('G', Predicates.blocks(COIL_CUPRONICKEL.get()))
                         .where('P', Predicates.blocks(CASING_STEEL_PIPE.get()))
                         .where('C', Predicates.blocks(CASING_STAINLESS_CLEAN.get())
@@ -147,6 +145,7 @@ public class HvMultisOreProc {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
+    // Washer
     public static final MultiblockMachineDefinition Extended_WASHER = HERRJOLO_REGISTRATE
             .multiblock("wet_ore_processor", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -206,6 +205,43 @@ public class HvMultisOreProc {
                         .build();
             })
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
+                    GTCEu.id("block/multiblock/advanced_processing_array"))
+            .register();
+
+    // Sorter
+    public static final MultiblockMachineDefinition SORTER = HERRJOLO_REGISTRATE
+            .multiblock("sorter", WorkableElectricMultiblockMachine::new)
+            .langValue("§6Sorter")
+            .tooltips(Component.literal("Sorts ore depending on weight, optics and haptics"))
+            .tooltips(Component.literal("Does only accept §6One §fEnergy Hatch"))
+            .tooltips(Component.literal("Does not accept Parallel Hatches"))
+            .rotationState(RotationState.ALL)
+            .recipeTypes(ChromaticRecepieTypes.SORTER)
+            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
+            .appearanceBlock(CASING_STEEL_SOLID)
+            .pattern(definition -> {
+                return FactoryBlockPattern.start()
+                        .aisle(" CCC ", " CTC ", " CTC ", " CCC ")
+                        .aisle("CCCCC", "CFFFC", "CFFFC", "CCCCC")
+                        .aisle("CCCCC", "TFGFT", "TFGFT", "CCSCC")
+                        .aisle("CCCCC", "CFFFC", "CFFFC", "CCCCC")
+                        .aisle(" CKC ", " CTC ", " CTC ", " CMC ")
+                        .where("K", Predicates.controller(Predicates.blocks(definition.get())))
+                        .where("M", Predicates.abilities(PartAbility.MAINTENANCE))
+                        .where("S", Predicates.abilities(PartAbility.MUFFLER))
+                        .where(" ", Predicates.any())
+                        .where("G", Predicates.blocks(CASING_STEEL_GEARBOX.get()))
+                        .where("F", Predicates.blocks(ChemicalHelper.getBlock(frameGt, StainlessSteel)))
+                        .where("T", Predicates.blocks(CASING_TEMPERED_GLASS.get()))
+                        .where("C", Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get())
+                                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+                                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+                                .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setExactLimit(1).setPreviewCount(1))
+                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
+                                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1)))
+                        .build();
+            })
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
