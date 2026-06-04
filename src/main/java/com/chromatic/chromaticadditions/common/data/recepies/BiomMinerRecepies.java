@@ -89,15 +89,5 @@ public class BiomMinerRecepies {
                 .duration(300)
                 .EUt(1000)
                 .save(provider);
-
-        ChromaticRecepieTypes.THEMINER.recipeBuilder("Crystalized_Deposit")
-                .chancedInput(ChromaticItems.DRILL_HEAD.asStack(), 500, 0)
-                .inputFluids(DrillingFluid, 10)
-                .outputItems(TagPrefix.rawOre, ChromaticMaterials.CRYSTALIZED_MINERAL_CLUSTER, 10)
-                .chancedOutput(GTItems.ADVANCED_SMD_DIODE.asStack(), 50, 0)
-                .circuitMeta(5)
-                .duration(300)
-                .EUt(1000)
-                .save(provider);
     }
 }

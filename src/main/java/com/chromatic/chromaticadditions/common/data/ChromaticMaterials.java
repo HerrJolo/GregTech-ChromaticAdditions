@@ -65,7 +65,7 @@ public class ChromaticMaterials {
                 .ingot()
                 .addOreByproducts(GTMaterials.Aluminium, GTMaterials.Bauxite, GTMaterials.Gallium)
                 .washedIn(GTMaterials.SodiumPersulfate)
-                .flags(GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_ROD, GENERATE_FRAME, GENERATE_PLATE)
                 .blast(b -> b.temp(1700, BlastProperty.GasTier.MID)
                         .blastStats(VA[HV], 600)
                         .vacuumStats(VA[HV]))
@@ -85,7 +85,6 @@ public class ChromaticMaterials {
 
         ingot.setIgnored(DESH, ModItems.DESH_INGOT);
         block.setIgnored(DESH, ModItems.DESH_BLOCK);
-        rawOre.setIgnored(DESH, ModItems.RAW_DESH);
         plate.setIgnored(DESH, ModItems.DESH_PLATE);
         nugget.setIgnored(DESH, ModItems.DESH_NUGGET);
     }

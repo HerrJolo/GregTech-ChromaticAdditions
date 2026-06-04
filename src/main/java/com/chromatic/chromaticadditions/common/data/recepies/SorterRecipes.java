@@ -33,7 +33,7 @@ public class SorterRecipes {
                 .chancedOutput(TagPrefix.rawOre, GTMaterials.Copper, 4000, 0)
                 .chancedOutput(TagPrefix.rawOre, GTMaterials.Cassiterite, 3000, 0)
                 .chancedOutput(TagPrefix.rawOre, GTMaterials.Kyanite, 2500, 0)
-                .chancedOutput(TagPrefix.rawOre, GTMaterials.Electrotine, 20000, 0)
+                .chancedOutput(TagPrefix.rawOre, GTMaterials.Electrotine, 2000, 0)
                 .duration(400)
                 .EUt(250)
                 .circuitMeta(1)

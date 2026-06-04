@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 
 public enum ChromaticArmorMaterials implements ArmorMaterial {
 
-    NANOBOOTS("nano_boots", 23, new int[] { 4, 5, 6, 7 }, 25, SoundEvents.ARMOR_EQUIP_CHAIN,
+    NANOBOOTS("nano_boots", 23, new int[] { 4, 7, 6, 4 }, 25, SoundEvents.ARMOR_EQUIP_CHAIN,
             4f, 1f, () -> Ingredient.of(ChemicalHelper.get(TagPrefix.frameGt, GTMaterials.Steel)));
 
     private final String name;
