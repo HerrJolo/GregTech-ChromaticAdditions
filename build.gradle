@@ -159,7 +159,9 @@ dependencies {
 
     //CustomDependencies
     modImplementation("curse.maven:ad-astra-635042:6262032")
-    //modRuntimeOnly("curse.maven:kubejs-aisle-tool-1236291:7543948")
+    modRuntimeOnly("curse.maven:kubejs-aisle-tool-1236291:7543948")
+    modRuntimeOnly("curse.maven:mouse-tweaks-60089:5338457")
+    modImplementation("curse.maven:farmers-delight-398521:8083474")
 
     //Dependency Of The Dependecy
     modImplementation("curse.maven:resourceful-lib-570073:5659871")

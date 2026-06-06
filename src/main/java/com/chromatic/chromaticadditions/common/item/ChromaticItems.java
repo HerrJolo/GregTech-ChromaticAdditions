@@ -69,10 +69,17 @@ public class ChromaticItems {
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/uv_mining_circuits_1")))
             .register();
 
-    public static ItemEntry<PickaxeItem> NANO_MULTITOOL = HERRJOLO_REGISTRATE
-            .item("nano_multitool", (p) -> new PickaxeItem(ChromaticToolMaterials.NANO, 1, 1, new Item.Properties()))
-            .lang("NanoMuscle™ Multi Tool")
-            .properties(p -> p.rarity(Rarity.EPIC))
-            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/nano_pickaxe")))
+    public static ItemEntry<ComponentItem> IRON_BRICK_MOLD = HERRJOLO_REGISTRATE
+            .item("iron_brick_mold", ComponentItem::create)
+            .lang("Iron Brick Mold")
+            .properties(p -> p.stacksTo(8))
+            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/iron_brick_mold")))
+            .register();
+
+    public static ItemEntry<ComponentItem> IRON_BLOCK_MOLD = HERRJOLO_REGISTRATE
+            .item("iron_block_mold", ComponentItem::create)
+            .lang("Iron Block Mold")
+            .properties(p -> p.stacksTo(8))
+            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/iron_block_mold")))
             .register();
 }
