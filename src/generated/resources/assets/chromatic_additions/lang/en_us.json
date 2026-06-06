@@ -16,6 +16,7 @@
   "block.chromatic_additions.sorter": "§6Sorter",
   "block.chromatic_additions.the_miner": "§5Large Biom Miner Deposit Extractor",
   "block.chromatic_additions.wet_ore_processor": "Wet Ore Processor",
+  "item.chromatic_additions.advanced_gas_mask": "Advanced Gas Mask",
   "item.chromatic_additions.drill_head": "Drill Head",
   "item.chromatic_additions.ev_mining_circuite_1": "EV Mining Circuite",
   "item.chromatic_additions.hv_mining_circuite_1": "HV Mining Circuite",
@@ -23,7 +24,9 @@
   "item.chromatic_additions.luv_mining_circuite_1": "LuV Mining Circuite",
   "item.chromatic_additions.mv_mining_circuite_1": "MV Mining Circuite",
   "item.chromatic_additions.nano_gas_mask": "NanoMuscle™ Gas Mask",
+  "item.chromatic_additions.nano_multitool": "NanoMuscle™ Multi Tool",
   "item.chromatic_additions.nano_tarveler_boots": "NanoMuscle™ Traveler Boots",
+  "item.chromatic_additions.primitive_gas_mask": "Primitive Gas Mask",
   "item.chromatic_additions.uv_mining_circuite_1": "UV Mining Circuite",
   "item.chromatic_additions.zpm_mining_circuite_1": "ZPM Mining Circuite"
 }

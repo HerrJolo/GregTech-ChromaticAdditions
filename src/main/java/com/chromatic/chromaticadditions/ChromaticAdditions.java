@@ -3,8 +3,9 @@ package com.chromatic.chromaticadditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
 import com.chromatic.chromaticadditions.common.data.ChromaticMaterials;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
+import com.chromatic.chromaticadditions.common.data.armor.DimensionBehaviour;
+import com.chromatic.chromaticadditions.common.item.ChromaticArmor;
 import com.chromatic.chromaticadditions.common.item.ChromaticItems;
-import com.chromatic.chromaticadditions.common.item.NanoTraverBoots;
 import com.chromatic.chromaticadditions.common.machine.multiblock.part.PartRegistry;
 import com.chromatic.chromaticadditions.common.machine.multiblock.structurs.*;
 
@@ -77,7 +78,7 @@ public class ChromaticAdditions {
         // Most other events are fired on Forge's bus.
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
-        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(DimensionBehaviour.class);
 
         HERRJOLO_REGISTRATE.registerRegistrate();
         REGISTRATE.registerRegistrate();
@@ -86,7 +87,7 @@ public class ChromaticAdditions {
     private static void init() {
         CasingBlocks.init();
         ChromaticItems.init();
-        NanoTraverBoots.init();
+        ChromaticArmor.init();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

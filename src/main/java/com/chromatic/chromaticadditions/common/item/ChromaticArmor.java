@@ -7,16 +7,14 @@ import com.gregtechceu.gtceu.api.item.armor.ArmorComponentItem;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.Tags;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 
-public class NanoTraverBoots {
+public class ChromaticArmor {
 
     public static ItemEntry<ArmorComponentItem> NANO_TRAVELER_BOOTS = HERRJOLO_REGISTRATE
             .item("nano_tarveler_boots",
@@ -44,6 +42,21 @@ public class NanoTraverBoots {
             .properties(Item.Properties::fireResistant)
             .lang("NanoMuscle™ Gas Mask")
             .properties(p -> p.rarity(Rarity.EPIC))
+            .tag(Tags.Items.ARMORS_HELMETS)
+            .register();
+
+    public static ItemEntry<ArmorItem> ADVANCED_GAS_MASK = HERRJOLO_REGISTRATE
+            .item("advanced_gas_mask",
+                    (p) -> new ArmorItem(ChromaticArmorMaterials.ADVANCEDGAS, ArmorItem.Type.HELMET, p))
+            .properties(p -> p.rarity(Rarity.RARE))
+            .lang("Advanced Gas Mask")
+            .tag(Tags.Items.ARMORS_HELMETS)
+            .register();
+
+    public static ItemEntry<ArmorItem> PRIMITIVE_GAS_MASK = HERRJOLO_REGISTRATE
+            .item("primitive_gas_mask", (p) -> new ArmorItem(ChromaticArmorMaterials.IRONGAS, ArmorItem.Type.HELMET, p))
+            .properties(p -> p.rarity(Rarity.UNCOMMON))
+            .lang("Primitive Gas Mask")
             .tag(Tags.Items.ARMORS_HELMETS)
             .register();
 

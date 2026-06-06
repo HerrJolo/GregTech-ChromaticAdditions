@@ -18,6 +18,10 @@ public class ChromaticRecepieTypes {
     public static GTRecipeType SORTER;
     public static GTRecipeType THEMINER;
     public static GTRecipeType PRECISONASSEMBLER;
+    public static GTRecipeType LARGERIVERPUMP;
+    public static GTRecipeType PRIMITIVEMIXER;
+
+
 
     public static void init() {
         EMLINE = register("electric_assembly_line", MULTIBLOCK)
@@ -57,5 +61,19 @@ public class ChromaticRecepieTypes {
                 .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.ASSEMBLER);
+
+        LARGERIVERPUMP = register("large_river_pump", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(1, 1, 0, 1)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.BOILER);
+
+        PRIMITIVEMIXER = register("primitive_mixer", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(1, 1, 0, 1)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.MIXER);
     }
 }

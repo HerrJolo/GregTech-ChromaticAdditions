@@ -1,6 +1,10 @@
 package com.chromatic.chromaticadditions.common.item;
 
+import com.chromatic.chromaticadditions.common.data.tools.ChromaticToolMaterials;
+
 import com.gregtechceu.gtceu.api.item.ComponentItem;
+
+import net.minecraft.world.item.*;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
 
@@ -63,5 +67,12 @@ public class ChromaticItems {
             .lang("UV Mining Circuite")
             .properties(p -> p.stacksTo(1))
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/uv_mining_circuits_1")))
+            .register();
+
+    public static ItemEntry<PickaxeItem> NANO_MULTITOOL = HERRJOLO_REGISTRATE
+            .item("nano_multitool", (p) -> new PickaxeItem(ChromaticToolMaterials.NANO, 1, 1, new Item.Properties()))
+            .lang("NanoMuscle™ Multi Tool")
+            .properties(p -> p.rarity(Rarity.EPIC))
+            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/nano_pickaxe")))
             .register();
 }

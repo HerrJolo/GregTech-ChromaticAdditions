@@ -16,8 +16,14 @@ import java.util.function.Supplier;
 
 public enum ChromaticArmorMaterials implements ArmorMaterial {
 
-    NANOBOOTS("nano_boots", 23, new int[] { 4, 7, 6, 4 }, 25, SoundEvents.ARMOR_EQUIP_CHAIN,
-            4f, 1f, () -> Ingredient.of(ChemicalHelper.get(TagPrefix.frameGt, GTMaterials.Steel)));
+    NANOBOOTS("nano_boots", 23, new int[] { 4, 7, 6, 4 }, 15, SoundEvents.ARMOR_EQUIP_CHAIN,
+            4f, 0.1f, () -> Ingredient.of(ChemicalHelper.get(TagPrefix.frameGt, GTMaterials.Steel))),
+
+    IRONGAS("irongas", 23, new int[] { 2, 7, 6, 2 }, 10, SoundEvents.ARMOR_EQUIP_IRON,
+            0f, 0f, () -> Ingredient.of(ChemicalHelper.get(TagPrefix.plate, GTMaterials.Iron))),
+
+    ADVANCEDGAS("advancedgas", 23, new int[] { 3, 7, 6, 3 }, 13, SoundEvents.ARMOR_EQUIP_CHAIN,
+            2f, 0f, () -> Ingredient.of(ChemicalHelper.get(TagPrefix.plate, GTMaterials.Aluminium)));
 
     private final String name;
     private final int durabilityMultiplier;
