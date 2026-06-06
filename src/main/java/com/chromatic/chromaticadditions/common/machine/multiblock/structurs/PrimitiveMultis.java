@@ -32,26 +32,28 @@ public class PrimitiveMultis {
         .appearanceBlock(GTBlocks.TREATED_WOOD_PLANK)
         .pattern(definition -> {
             return FactoryBlockPattern.start()
-                    .aisle("abcccbb", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
+                    .aisle("abcccba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
                     .aisle("bdcccdb", "adaeada", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
                     .aisle("ccaaacc", "aaaaaaa", "aaaeaaa", "aaaeaaa", "aaaeaaa", "aaaaaaa", "aaaaaaa")
                     .aisle("ccadacc", "aeadaea", "aaedeaa", "aaedeaa", "aaedeaa", "aaadaaa", "aaadaaa")
                     .aisle("ccaaacc", "aaaaaaa", "aaaeaaa", "aaaeaaa", "aaaeaaa", "aaaaaaa", "aaaaaaa")
                     .aisle("bdcccdb", "adaeada", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
-                    .aisle("abcKcba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "baaaaaa")
+                    .aisle("abcKcba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
                     .where("K", Predicates.controller(Predicates.blocks(definition.get())))
                     .where("a", Predicates.any())
                     .where("b", Predicates.blocks(ChemicalHelper.getBlock(frameGt, TreatedWood)))
+                    .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
                     .where("c", Predicates.blocks(GTBlocks.CASING_PUMP_DECK.get())
                         .or(Predicates.abilities(PartAbility.EXPORT_ITEMS))
                         .or(Predicates.abilities(PartAbility.IMPORT_ITEMS))
                         .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS)))
                     .where("d", Predicates.blocks(GTBlocks.RUBBER_LOG.get()))
-                    .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
                     .build();
         })
         .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                 GTCEu.id("block/multiblock/advanced_processing_array"))
         .register();
 
+    public static void init() {
+    }
 }

@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty;
+import com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 
 import earth.terrarium.adastra.common.registry.ModItems;
@@ -82,6 +83,8 @@ public class ChromaticMaterials {
                         .vacuumStats(VA[HV], 600))
                 .color(0xD6C3C3)
                 .buildAndRegister();
+
+        GTMaterials.Iron.addFlags(GENERATE_FRAME);
 
         ingot.setIgnored(DESH, ModItems.DESH_INGOT);
         block.setIgnored(DESH, ModItems.DESH_BLOCK);

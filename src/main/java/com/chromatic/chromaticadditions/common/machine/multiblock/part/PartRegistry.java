@@ -13,11 +13,13 @@ import com.gregtechceu.gtceu.common.machine.multiblock.part.DataAccessHatchMachi
 import com.gregtechceu.gtceu.common.machine.multiblock.part.FluidHatchPartMachine;
 import net.minecraft.network.chat.Component;
 
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
 import static com.gregtechceu.gtceu.api.GTValues.*;
+import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createBasicReplaceableTextureMachineModel;
 import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 
 public class PartRegistry {
@@ -41,7 +43,19 @@ public class PartRegistry {
             .langValue("Primitive Fluid Hatch")
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_FLUIDS)
-            .overlayTieredHullModel("fluid_passthrough_hatch")
+            //.overlayTieredHullModel("fluid_passthrough_hatch")
+            .model(createBasicReplaceableTextureMachineModel(GTCEu.id("block/machine/part/pump_hatch"))
+                    .andThen(builder -> {
+                        // UV lock the model so the plank texture doesn't rotate weirdly
+                        builder.replaceForAllStates((state, models) -> {
+                            for (int i = 0; i < models.length; i++) {
+                                models[i] = ConfiguredModel.builder()
+                                        .modelFile(models[i].model).uvLock(true)
+                                        .buildLast();
+                            }
+                            return models;
+                        });
+                    }))
             .register();
 
     @NotNull

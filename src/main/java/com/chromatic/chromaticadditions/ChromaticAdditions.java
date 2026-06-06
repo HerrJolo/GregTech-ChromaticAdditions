@@ -165,6 +165,7 @@ public class ChromaticAdditions {
         PartRegistry.init();
         DeepOreDrillingMachines.init();
         UpgradedMultis.init();
+        PrimitiveMultis.init();
     }
 
     /**
