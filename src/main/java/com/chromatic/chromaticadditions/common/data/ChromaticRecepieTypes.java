@@ -20,6 +20,8 @@ public class ChromaticRecepieTypes {
     public static GTRecipeType PRECISONASSEMBLER;
     public static GTRecipeType LARGERIVERPUMP;
     public static GTRecipeType PRIMITIVEMIXER;
+    public static GTRecipeType PRIMITIVEPRESS;
+
 
 
 
@@ -71,7 +73,14 @@ public class ChromaticRecepieTypes {
 
         PRIMITIVEMIXER = register("primitive_mixer", MULTIBLOCK)
                 .setEUIO(IO.IN)
-                .setMaxIOSize(1, 1, 0, 1)
+                .setMaxIOSize(6, 1, 2, 0)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.MIXER);
+
+        PRIMITIVEPRESS = register("primitive_press", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(2, 1, 0, 0)
                 .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.MIXER);

@@ -23,6 +23,8 @@ public class ChromaticMaterials {
     public static Material PRECIOUS_METALS;
     public static Material DESH;
     public static Material DRILLING_STEEL;
+    public static Material RIVERMUD;
+
 
     public static void init() {
         MAGNETIC_MINERAL_CLUSTER = new Material.Builder(GTCEu.id("magnetic_mineral_cluster"))
@@ -82,6 +84,11 @@ public class ChromaticMaterials {
                         .blastStats(VA[HV], 600)
                         .vacuumStats(VA[HV], 600))
                 .color(0xD6C3C3)
+                .buildAndRegister();
+
+        RIVERMUD = new Material.Builder(GTCEu.id("river_mud"))
+                .fluid()
+                .color(0xA87D7D)
                 .buildAndRegister();
 
         GTMaterials.Iron.addFlags(GENERATE_FRAME);
