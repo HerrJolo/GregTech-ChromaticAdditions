@@ -2,6 +2,10 @@
   "values": [
     "chromatic_additions:liquid_working_casing",
     "chromatic_additions:em_casing",
-    "chromatic_additions:drilling_casing"
+    "chromatic_additions:drilling_casing",
+    "chromatic_additions:coal_deposit",
+    "chromatic_additions:iron_deposit",
+    "chromatic_additions:copper_deposit",
+    "chromatic_additions:cassiterite_deposit"
   ]
 }

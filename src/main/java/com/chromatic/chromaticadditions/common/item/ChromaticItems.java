@@ -1,11 +1,10 @@
 package com.chromatic.chromaticadditions.common.item;
 
-import com.chromatic.chromaticadditions.common.data.tools.ChromaticToolMaterials;
+import com.chromatic.chromaticadditions.common.data.ChromaticTags;
 
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 
-import net.minecraft.world.item.*;
-
+import com.tterrag.registrate.util.entry.FluidEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
@@ -82,4 +81,18 @@ public class ChromaticItems {
             .properties(p -> p.stacksTo(8))
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/iron_block_mold")))
             .register();
+
+    public static ItemEntry<ComponentItem> PRIMITIVE_HEAT_RESISTANT_SUITE = HERRJOLO_REGISTRATE
+            .item("primitive_heat_resistand_suite", ComponentItem::create)
+            .lang("A.R.K.E. Suite")
+            // .onRegister(attach(new TooltipBehavior(lines -> {
+            // lines.add(Component.literal("Will protect you from the smoldering heat of the §4Nether"));
+            // lines.add(Component.literal("However it will not protect you from direct contact with fire"));
+            // })))
+            .tag(ChromaticTags.HEATPROTCETIONSUITE)
+            .properties(p -> p.stacksTo(1))
+            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/primitive_heat_resistand_suite")))
+            .register();
+
+
 }

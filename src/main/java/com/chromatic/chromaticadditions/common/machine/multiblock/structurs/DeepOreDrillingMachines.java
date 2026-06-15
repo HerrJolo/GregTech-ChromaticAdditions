@@ -1,5 +1,6 @@
 package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
+import com.chromatic.chromaticadditions.common.block.CasingBlocks;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -25,7 +26,7 @@ public class DeepOreDrillingMachines {
 
     public static MultiblockMachineDefinition THE_MINER = HERRJOLO_REGISTRATE
             .multiblock("the_miner", WorkableElectricMultiblockMachine::new)
-            .langValue("§5Large Biom Miner Deposit Extractor")
+            .langValue("§5Large Biome Miner Extractor")
             .tooltips(Component.literal("Digs in to deep mineral deposits and extracts raw unrefined mineral Clusters"))
             .tooltips(Component.literal("Does only accept §6One §fEnergy Hatch"))
             .tooltips(Component.literal("Does not accept Parallel Hatches"))
@@ -40,134 +41,172 @@ public class DeepOreDrillingMachines {
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("bbbbaaaaaaaaaaabbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("bbaaaaaaaaaaaaaaabb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("bbaaaaaaaaaaaaaaabb", "bbbbbbbccbccbbbbbbb", "bbbbbbbbcbcbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("baaaaaaaaaaaaaaaaab", "bbbbbbbccbccbbbbbbb", "bbbbbbbccbccbbbbbbb",
                                 "bbbbbbbccbccbbbbbbb", "bbbbbbbccbccbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("baaaaaaaaaaaaaaaaab", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbddbddbbbbbbb",
                                 "bbbbbbbddbddbbbbbbb", "bbbbbbbddbddbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("aaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbddbddbbbbbbb", "bbbbbbbcccccbbbbbbb", "bbbbbbbddbddbbbbbbb",
                                 "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("aaaaaaaaaaaaaaaaaaa", "bbbccbbbbbbbbbccbbb", "bbbbcbbbbbbbbbcbbbb",
                                 "bbbbcbbbbbbbbbcbbbb", "bbbbcbbbbbbbbbcbbbb", "bbbbbdbbbbbbbdbbbbb",
                                 "bbbbbddbbbbbddbbbbb", "bbbbbdcbbbbbcdbbbbb", "bbbbbbdbbbbbdbbbbbb",
                                 "bbbbbbdbbbbbdbbbbbb", "bbbbbbdbbbbbdbbbbbb", "bbbbbbdbbbbbdbbbbbb",
                                 "bbbbbbbdcccdbbbbbbb", "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb",
                                 "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdddddbbbbbbb",
-                                "bbbbbbbdbbbdbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
-                        .aisle("aaaaaaaabbbaaaaaaaa", "bbbccbbbbbbbbbccbbb", "bbbccbbbbbbbbbccbbb",
+                                "bbbbbbbdbbbdbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
+                        .aisle("aaaaaaaabbbaaaaaaaa", "bbbhcbbbbbbbbbccbbb", "bbbccbbbbbbbbbccbbb",
                                 "bbbbcbbbbebbbbcbbbb", "bbbbcbbbbfbbbbcbbbb", "bbbbbdbbbfbbbdbbbbb",
                                 "bbbbbddbbfbbddbbbbb", "bbbbbdcbfffbcdbbbbb", "bbbbbbdbfffbdbbbbbb",
                                 "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
                                 "bbbbbbbcfefcbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
                                 "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbdfefdbbbbbbb",
-                                "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb")
+                                "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
+                                "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
+                                "bbbbbbbbfefbbbbbbbb")
                         .aisle("aaaaaaaabbbaaaaaaaa", "bbbbbbbbbgbbbbbbbbb", "bbbbbbbbbgbbbbbbbbb",
                                 "bbbbbbbbegebbbbbbbb", "bbbbbbbbfgfbbbbbbbb", "bbbbbbbbfgfbbbbbbbb",
                                 "bbbbbbbbfgfbbbbbbbb", "bbbbbbcbfgfbcbbbbbb", "bbbbbbbbfgfbbbbbbbb",
                                 "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb",
                                 "bbbbbbbcegecbbbbbbb", "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb",
                                 "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb", "bbbbbbbdegedbbbbbbb",
-                                "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb")
+                                "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb",
+                                "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb", "bbbbbbbbegebbbbbbbb",
+                                "bbbbbbbbegebbbbbbbb")
                         .aisle("aaaaaaaabbbaaaaaaaa", "bbbccbbbbbbbbbccbbb", "bbbccbbbbbbbbbccbbb",
                                 "bbbbcbbbbebbbbcbbbb", "bbbbcbbbbfbbbbcbbbb", "bbbbbdbbbfbbbdbbbbb",
                                 "bbbbbddbbfbbddbbbbb", "bbbbbdcbfffbcdbbbbb", "bbbbbbdbfffbdbbbbbb",
                                 "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
                                 "bbbbbbbcfefcbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
                                 "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbdfefdbbbbbbb",
-                                "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb")
+                                "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
+                                "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb", "bbbbbbbbfefbbbbbbbb",
+                                "bbbbbbbbfefbbbbbbbb")
                         .aisle("aaaaaaaaaaaaaaaaaaa", "bbbccbbbbbbbbbccbbb", "bbbbcbbbbbbbbbcbbbb",
                                 "bbbbcbbbbbbbbbcbbbb", "bbbbcbbbbbbbbbcbbbb", "bbbbbdbbbbbbbdbbbbb",
                                 "bbbbbddbbbbbddbbbbb", "bbbbbdcbbbbbcdbbbbb", "bbbbbbdbbbbbdbbbbbb",
                                 "bbbbbbdbbbbbdbbbbbb", "bbbbbbdbbbbbdbbbbbb", "bbbbbbdbbbbbdbbbbbb",
                                 "bbbbbbbdcccdbbbbbbb", "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb",
                                 "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdddddbbbbbbb",
-                                "bbbbbbbdbbbdbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbdbbbdbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("aaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbddbddbbbbbbb", "bbbbbbbcccccbbbbbbb", "bbbbbbbddbddbbbbbbb",
                                 "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb", "bbbbbbbdbbbdbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("baaaaaaaaaaaaaaaaab", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbddbddbbbbbbb",
                                 "bbbbbbbddbddbbbbbbb", "bbbbbbbddbddbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("baaaaaaaaaaaaaaaaab", "bbbbbbbccbccbbbbbbb", "bbbbbbbccbccbbbbbbb",
                                 "bbbbbbbccbccbbbbbbb", "bbbbbbbccbccbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
-                        .aisle("bbaaaaaaaaaaaaaaabb", "bbbbbbbcKbccbbbbbbb", "bbbbbbbbcbcbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
+                        .aisle("bbaaaaaaaaaaaaaaabb", "bbbbbbbccbccbbbbbbb", "bbbbbbbbcbcbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("bbaaaaaaaaaaaaaaabb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("bbbbaaaaaaaaaaabbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
                         .aisle("bbbbbbaaaaaaabbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
                                 "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
-                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb")
-                        .where("K", Predicates.controller(Predicates.blocks(definition.get())))
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb", "bbbbbbbbbbbbbbbbbbb",
+                                "bbbbbbbbbbbbbbbbbbb")
+                        .where("h", Predicates.controller(Predicates.blocks(definition.get())))
                         .where("a", Predicates.blocks(GTBlocks.LIGHT_CONCRETE.get()))
                         .where("b", Predicates.any())
                         .where("c", Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get())
@@ -177,7 +216,7 @@ public class DeepOreDrillingMachines {
                                 .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1)))
                         .where("d", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Steel)))
                         .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, StainlessSteel)))
-                        .where("f", Predicates.blocks(GTBlocks.CASING_STAINLESS_CLEAN.get()))
+                        .where("f", Predicates.blocks(CasingBlocks.DRILLING_CASING.get()))
                         .where("g", Predicates.blocks(GTBlocks.CASING_STEEL_GEARBOX.get()))
                         .build();
             })

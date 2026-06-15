@@ -4,7 +4,6 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty;
-import com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 
 import earth.terrarium.adastra.common.registry.ModItems;
@@ -24,6 +23,7 @@ public class ChromaticMaterials {
     public static Material DESH;
     public static Material DRILLING_STEEL;
     public static Material RIVERMUD;
+    public static Material OVERWORLD_ORE_SLURRY;
 
 
     public static void init() {
@@ -97,5 +97,18 @@ public class ChromaticMaterials {
         block.setIgnored(DESH, ModItems.DESH_BLOCK);
         plate.setIgnored(DESH, ModItems.DESH_PLATE);
         nugget.setIgnored(DESH, ModItems.DESH_NUGGET);
+
+        OVERWORLD_ORE_SLURRY = new Material.Builder(GTCEu.id("overworld_ore_slurry"))
+                .fluid()
+                .color(0x666666)
+                .buildAndRegister();
+
+
+
+
+
+
+
+
     }
 }

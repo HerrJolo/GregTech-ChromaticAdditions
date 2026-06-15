@@ -1,6 +1,5 @@
 package com.chromatic.chromaticadditions;
 
-import com.chromatic.chromaticadditions.common.BedRockOres.OverworldOreVeins;
 import com.chromatic.chromaticadditions.common.data.recepies.BiomMinerRecepies;
 import com.chromatic.chromaticadditions.common.data.recepies.RiverPumpRecipec;
 import com.chromatic.chromaticadditions.common.data.recepies.SorterRecipes;
@@ -48,9 +47,7 @@ public class GregTech_Chromatic_Additions implements IGTAddon {
     }
 
     @Override
-    public void registerBedrockOreVeins() {
-        OverworldOreVeins.init();
-    }
+    public void registerBedrockOreVeins() {}
 
     // If you have custom ingredient types, uncomment this & change to match your capability.
     // KubeJS WILL REMOVE YOUR RECIPES IF THESE ARE NOT REGISTERED.

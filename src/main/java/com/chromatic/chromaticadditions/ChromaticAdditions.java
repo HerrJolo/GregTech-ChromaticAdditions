@@ -1,6 +1,7 @@
 package com.chromatic.chromaticadditions;
 
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
+import com.chromatic.chromaticadditions.common.block.DepositBlocks;
 import com.chromatic.chromaticadditions.common.data.ChromaticMaterials;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 import com.chromatic.chromaticadditions.common.data.armor.DimensionBehaviour;
@@ -86,6 +87,7 @@ public class ChromaticAdditions {
 
     private static void init() {
         CasingBlocks.init();
+        DepositBlocks.init();
         ChromaticItems.init();
         ChromaticArmor.init();
     }
@@ -166,6 +168,7 @@ public class ChromaticAdditions {
         DeepOreDrillingMachines.init();
         UpgradedMultis.init();
         PrimitiveMultis.init();
+        OreSorterMultis.init();
     }
 
     /**

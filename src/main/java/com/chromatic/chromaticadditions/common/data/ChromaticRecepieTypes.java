@@ -22,9 +22,6 @@ public class ChromaticRecepieTypes {
     public static GTRecipeType PRIMITIVEMIXER;
     public static GTRecipeType PRIMITIVEPRESS;
 
-
-
-
     public static void init() {
         EMLINE = register("electric_assembly_line", MULTIBLOCK)
                 .setEUIO(IO.IN)

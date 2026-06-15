@@ -52,7 +52,7 @@ public class BiomMinerRecepies {
         // Miner
         ChromaticRecepieTypes.THEMINER.recipeBuilder("Magnetic_Deposit")
                 .chancedInput(ChromaticItems.DRILL_HEAD.asStack(), 500, 0)
-                .inputFluids(DrillingFluid, 10)
+                .perTick(true).inputFluids(DrillingFluid, 10).perTick(false)
                 .outputItems(TagPrefix.rawOre, ChromaticMaterials.MAGNETIC_MINERAL_CLUSTER, 15)
                 .circuitMeta(1)
                 .biome(Biomes.STONY_PEAKS)
@@ -62,7 +62,7 @@ public class BiomMinerRecepies {
 
         ChromaticRecepieTypes.THEMINER.recipeBuilder("Porus_Deposit")
                 .chancedInput(ChromaticItems.DRILL_HEAD.asStack(), 500, 0)
-                .inputFluids(DrillingFluid, 10)
+                .perTick(true).inputFluids(DrillingFluid, 10).perTick(false)
                 .outputItems(TagPrefix.rawOre, ChromaticMaterials.PORUS_MINERAL_CLUSTER, 17)
                 .circuitMeta(2)
                 .biome(Biomes.SWAMP)
@@ -72,7 +72,7 @@ public class BiomMinerRecepies {
 
         ChromaticRecepieTypes.THEMINER.recipeBuilder("Mixed_Deposit")
                 .chancedInput(ChromaticItems.DRILL_HEAD.asStack(), 500, 0)
-                .inputFluids(DrillingFluid, 10)
+                .perTick(true).inputFluids(DrillingFluid, 10).perTick(false)
                 .outputItems(TagPrefix.rawOre, ChromaticMaterials.MIXED_MINERAL_CLUSTER, 12)
                 .circuitMeta(3)
                 .biome(Biomes.DESERT)
@@ -82,7 +82,7 @@ public class BiomMinerRecepies {
 
         ChromaticRecepieTypes.THEMINER.recipeBuilder("Crystalized_Deposit")
                 .chancedInput(ChromaticItems.DRILL_HEAD.asStack(), 500, 0)
-                .inputFluids(DrillingFluid, 10)
+                .perTick(true).inputFluids(DrillingFluid, 10).perTick(false)
                 .outputItems(TagPrefix.rawOre, ChromaticMaterials.CRYSTALIZED_MINERAL_CLUSTER, 10)
                 .circuitMeta(4)
                 .biome(Biomes.DEEP_COLD_OCEAN)

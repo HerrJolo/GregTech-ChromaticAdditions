@@ -118,7 +118,7 @@ public class HvMultis {
                         .where('T', Predicates.blocks(CASING_TEMPERED_GLASS.get()))
                         .build();
             })
-            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 

@@ -1,5 +1,6 @@
 package com.chromatic.chromaticadditions.common.item;
 
+import com.chromatic.chromaticadditions.common.data.ChromaticTags;
 import com.chromatic.chromaticadditions.common.data.armor.ChromaticArmorMaterials;
 import com.chromatic.chromaticadditions.common.data.armor.NanoBootsLogicSuite;
 
@@ -42,7 +43,7 @@ public class ChromaticArmor {
             .properties(Item.Properties::fireResistant)
             .lang("NanoMuscle™ Gas Mask")
             .properties(p -> p.rarity(Rarity.EPIC))
-            .tag(Tags.Items.ARMORS_HELMETS)
+            .tag(Tags.Items.ARMORS_HELMETS, ChromaticTags.NETHERMASKS, ChromaticTags.ENDMASKS)
             .register();
 
     public static ItemEntry<ArmorItem> ADVANCED_GAS_MASK = HERRJOLO_REGISTRATE
@@ -50,14 +51,14 @@ public class ChromaticArmor {
                     (p) -> new ArmorItem(ChromaticArmorMaterials.ADVANCEDGAS, ArmorItem.Type.HELMET, p))
             .properties(p -> p.rarity(Rarity.RARE))
             .lang("Advanced Gas Mask")
-            .tag(Tags.Items.ARMORS_HELMETS)
+            .tag(Tags.Items.ARMORS_HELMETS, ChromaticTags.NETHERMASKS)
             .register();
 
     public static ItemEntry<ArmorItem> PRIMITIVE_GAS_MASK = HERRJOLO_REGISTRATE
             .item("primitive_gas_mask", (p) -> new ArmorItem(ChromaticArmorMaterials.IRONGAS, ArmorItem.Type.HELMET, p))
             .properties(p -> p.rarity(Rarity.UNCOMMON))
             .lang("Primitive Gas Mask")
-            .tag(Tags.Items.ARMORS_HELMETS)
+            .tag(Tags.Items.ARMORS_HELMETS, ChromaticTags.NETHERMASKS)
             .register();
 
     public static void init() {}
