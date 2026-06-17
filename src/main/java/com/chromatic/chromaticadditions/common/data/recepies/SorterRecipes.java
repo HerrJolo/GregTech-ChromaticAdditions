@@ -1,6 +1,5 @@
 package com.chromatic.chromaticadditions.common.data.recepies;
 
-import com.chromatic.chromaticadditions.common.block.DepositBlocks;
 import com.chromatic.chromaticadditions.common.data.ChromaticMaterials;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 
@@ -88,7 +87,5 @@ public class SorterRecipes {
                 .EUt(250)
                 .circuitMeta(1)
                 .save(provider);
-
-
     }
 }

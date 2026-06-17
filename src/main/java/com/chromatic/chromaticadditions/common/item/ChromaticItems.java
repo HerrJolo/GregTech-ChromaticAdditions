@@ -4,7 +4,6 @@ import com.chromatic.chromaticadditions.common.data.ChromaticTags;
 
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 
-import com.tterrag.registrate.util.entry.FluidEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
@@ -68,6 +67,13 @@ public class ChromaticItems {
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/uv_mining_circuits_1")))
             .register();
 
+    public static ItemEntry<ComponentItem> IRON_EMPTY_MOLD = HERRJOLO_REGISTRATE
+            .item("iron_empty_mold", ComponentItem::create)
+            .lang("Empty Iron Mold")
+            .properties(p -> p.stacksTo(8))
+            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/empty_iron_mold")))
+            .register();
+
     public static ItemEntry<ComponentItem> IRON_BRICK_MOLD = HERRJOLO_REGISTRATE
             .item("iron_brick_mold", ComponentItem::create)
             .lang("Iron Brick Mold")
@@ -93,6 +99,4 @@ public class ChromaticItems {
             .properties(p -> p.stacksTo(1))
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/primitive_heat_resistand_suite")))
             .register();
-
-
 }

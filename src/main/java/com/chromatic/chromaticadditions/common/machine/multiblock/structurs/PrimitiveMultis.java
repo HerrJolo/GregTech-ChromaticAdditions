@@ -1,13 +1,12 @@
 package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
-
 import com.chromatic.chromaticadditions.common.machine.multiblock.part.ChromaticPartAbility;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
-import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;

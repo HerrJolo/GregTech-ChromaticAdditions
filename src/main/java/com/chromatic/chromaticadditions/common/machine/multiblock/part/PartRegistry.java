@@ -1,7 +1,7 @@
 package com.chromatic.chromaticadditions.common.machine.multiblock.part;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
-import com.gregtechceu.gtceu.GTCEu;
+
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -11,8 +11,8 @@ import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.DataAccessHatchMachine;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.FluidHatchPartMachine;
-
 import com.gregtechceu.gtceu.common.machine.multiblock.part.ItemBusPartMachine;
+
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 
@@ -46,7 +46,8 @@ public class PartRegistry {
             .rotationState(RotationState.ALL)
             .abilities(ChromaticPartAbility.PRIMITIVE_INTPUT_HATCH)
             // .overlayTieredHullModel("fluid_passthrough_hatch")
-            .model(createBasicReplaceableTextureMachineModel(ChromaticAdditions.id("block/machine/part/primitive_fluid_input_hatch"))
+            .model(createBasicReplaceableTextureMachineModel(
+                    ChromaticAdditions.id("block/machine/part/primitive_fluid_input_hatch"))
                     .andThen(builder -> {
                         // UV lock the model so the plank texture doesn't rotate weirdly
                         builder.replaceForAllStates((state, models) -> {
@@ -60,14 +61,15 @@ public class PartRegistry {
                     }))
             .register();
 
-
     public static final MachineDefinition WOODENHATCHESOUTPUT = REGISTRATE
-            .machine("primitive_fluid_output_hatch", (holder) -> new FluidHatchPartMachine(holder, ULV, IO.OUT, 1000, 1))
+            .machine("primitive_fluid_output_hatch",
+                    (holder) -> new FluidHatchPartMachine(holder, ULV, IO.OUT, 1000, 1))
             .langValue("Primitive Fluid Export Hatch")
             .rotationState(RotationState.ALL)
             .abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_HATCH)
             // .overlayTieredHullModel("fluid_passthrough_hatch")
-            .model(createBasicReplaceableTextureMachineModel(ChromaticAdditions.id("block/machine/part/primitive_fluid_output_hatch"))
+            .model(createBasicReplaceableTextureMachineModel(
+                    ChromaticAdditions.id("block/machine/part/primitive_fluid_output_hatch"))
                     .andThen(builder -> {
                         // UV lock the model so the plank texture doesn't rotate weirdly
                         builder.replaceForAllStates((state, models) -> {
@@ -80,7 +82,6 @@ public class PartRegistry {
                         });
                     }))
             .register();
-
 
     public static final MachineDefinition WOODENBUSSINPUT = REGISTRATE
             .machine("primitive_item_input_bus", (holder) -> new ItemBusPartMachine(holder, ULV, IO.IN, 1, 1))
@@ -88,7 +89,8 @@ public class PartRegistry {
             .rotationState(RotationState.ALL)
             .abilities(ChromaticPartAbility.PRIMITIVE_INPUT_BUS)
             // .overlayTieredHullModel("fluid_passthrough_hatch")
-            .model(createBasicReplaceableTextureMachineModel(ChromaticAdditions.id("block/machine/part/primitive_input_bus"))
+            .model(createBasicReplaceableTextureMachineModel(
+                    ChromaticAdditions.id("block/machine/part/primitive_input_bus"))
                     .andThen(builder -> {
                         // UV lock the model so the plank texture doesn't rotate weirdly
                         builder.replaceForAllStates((state, models) -> {
@@ -108,7 +110,8 @@ public class PartRegistry {
             .rotationState(RotationState.ALL)
             .abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_BUS)
             // .overlayTieredHullModel("fluid_passthrough_hatch")
-            .model(createBasicReplaceableTextureMachineModel(ChromaticAdditions.id("block/machine/part/primitive_output_bus"))
+            .model(createBasicReplaceableTextureMachineModel(
+                    ChromaticAdditions.id("block/machine/part/primitive_output_bus"))
                     .andThen(builder -> {
                         // UV lock the model so the plank texture doesn't rotate weirdly
                         builder.replaceForAllStates((state, models) -> {
@@ -121,11 +124,6 @@ public class PartRegistry {
                         });
                     }))
             .register();
-
-
-
-
-
 
     @NotNull
     private static MachineBuilder<MachineDefinition, ?> registerDataHatch(String name, String displayName, int tier,

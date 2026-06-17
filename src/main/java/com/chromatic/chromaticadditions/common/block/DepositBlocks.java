@@ -40,14 +40,22 @@ public class DepositBlocks {
             "coal_deposit", BlockItem::new);
 
     public static BlockEntry<Block> IRON_DEPOSIT = registerSimpleBlock(
-            "Iron Deposit", "iron_deposit",
+            "Limonite Deposit", "limonite_deposit",
             "iron_deposit", BlockItem::new);
 
+    public static BlockEntry<Block> MAGNETITE_DEPOSIT = registerSimpleBlock(
+            "Magnetite  Deposit", "magnetite_deposit",
+            "magnetite_deposit", BlockItem::new);
+
     public static BlockEntry<Block> COPPER_DEPOSIT = registerSimpleBlock(
-            "Copper Deposit", "copper_deposit",
+            "Chalcopyrite Deposit", "chalcopyrite_deposit",
             "copper_deposit", BlockItem::new);
 
     public static BlockEntry<Block> CASSITERITE_DEPOSIT = registerSimpleBlock(
             "Cassiterite Deposit", "cassiterite_deposit",
             "cassiterite_deposit", BlockItem::new);
+
+    public static BlockEntry<Block> GALENA_DEPOSIT = registerSimpleBlock(
+            "Galena Deposit", "galena_deposit",
+            "galena_deposit", BlockItem::new);
 }

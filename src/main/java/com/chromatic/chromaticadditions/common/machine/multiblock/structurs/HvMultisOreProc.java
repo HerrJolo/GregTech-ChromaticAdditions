@@ -2,7 +2,6 @@ package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
-import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecipeModefiers;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -16,8 +15,6 @@ import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-
-import net.minecraft.network.chat.Component;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.frameGt;
@@ -177,7 +174,7 @@ public class HvMultisOreProc {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-    //Electrolyzer
+    // Electrolyzer
     public static final MultiblockMachineDefinition Extended_ElECTROLYCER = HERRJOLO_REGISTRATE
             .multiblock("industrial_electrolyze", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
@@ -208,8 +205,6 @@ public class HvMultisOreProc {
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
-
-
 
     public static void init() {}
 }

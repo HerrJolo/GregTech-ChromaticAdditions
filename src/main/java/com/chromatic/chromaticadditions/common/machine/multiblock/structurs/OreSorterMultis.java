@@ -1,6 +1,7 @@
 package com.chromatic.chromaticadditions.common.machine.multiblock.structurs;
 
 import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
@@ -11,6 +12,7 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Blocks;
 
@@ -21,8 +23,6 @@ import static com.gregtechceu.gtceu.common.data.GTBlocks.CASING_TITANIUM_STABLE;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class OreSorterMultis {
-
-
 
     // Sorter
     public static final MultiblockMachineDefinition STEAMESORTER = HERRJOLO_REGISTRATE
@@ -52,10 +52,9 @@ public class OreSorterMultis {
                         .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
                         .build();
             })
-        .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                     GTCEu.id("block/multiblock/implosion_compressor"))
-        .register();
-
+            .register();
 
     // Sorter
     public static final MultiblockMachineDefinition SORTER = HERRJOLO_REGISTRATE
@@ -94,7 +93,7 @@ public class OreSorterMultis {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-    //Large Sorter
+    // Large Sorter
     public static final MultiblockMachineDefinition LARGE_SORTER = HERRJOLO_REGISTRATE
             .multiblock("large_sorter", WorkableElectricMultiblockMachine::new)
             .langValue("§1Large Ore Sorter")
@@ -133,6 +132,5 @@ public class OreSorterMultis {
                     GTCEu.id("block/multiblock/advanced_processing_array"))
             .register();
 
-    public static void init() {
-    }
+    public static void init() {}
 }

@@ -14,5 +14,4 @@ public class ChromaticPartAbility extends PartAbility {
     public static final PartAbility PRIMITIVE_OUTPUT_BUS = new PartAbility("single_data");
     public static final PartAbility PRIMITIVE_OUTPUT_HATCH = new PartAbility("single_data");
     public static final PartAbility PRIMITIVE_INTPUT_HATCH = new PartAbility("single_data");
-
 }

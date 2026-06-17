@@ -24,7 +24,7 @@ public class ChromaticMaterials {
     public static Material DRILLING_STEEL;
     public static Material RIVERMUD;
     public static Material OVERWORLD_ORE_SLURRY;
-
+    public static Material COKE_OVEN_DUST;
 
     public static void init() {
         MAGNETIC_MINERAL_CLUSTER = new Material.Builder(GTCEu.id("magnetic_mineral_cluster"))
@@ -103,12 +103,9 @@ public class ChromaticMaterials {
                 .color(0x666666)
                 .buildAndRegister();
 
-
-
-
-
-
-
-
+        COKE_OVEN_DUST = new Material.Builder(GTCEu.id("coke_oven_brick_dust"))
+                .dust()
+                .color(0xc1bd91)
+                .buildAndRegister();
     }
 }

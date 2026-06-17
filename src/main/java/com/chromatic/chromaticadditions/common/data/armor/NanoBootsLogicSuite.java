@@ -189,13 +189,11 @@ public class NanoBootsLogicSuite extends ArmorLogicSuite implements IStepAssist 
                 lines.add(Component.translatable("metaarmor.message.nightvision.disabled"));
             }
         } else if (type == ArmorItem.Type.BOOTS) {
-            lines.add(Component.literal("Increases Movement Speed"));
+            lines.add(Component.literal("§bIncreases Movement Speed"));
             CompoundTag nbtData = itemStack.getOrCreateTag();
-            if (nbtData.getBoolean("stepAssist"))
-                lines.add(Component.translatable("metaarmor.message.step_assist.enabled"));
-            else lines.add(Component.translatable("metaarmor.message.step_assist.disabled"));
-            lines.add(Component.translatable("metaarmor.tooltip.falldamage"));
-            lines.add(Component.literal("Increases Jump Height"));
+            lines.add(Component.literal("§bEnables Step Up"));
+            lines.add(Component.literal("§bRemoves Fall Damage"));
+            lines.add(Component.literal("§bIncreases Jump Height"));
         }
     }
 
