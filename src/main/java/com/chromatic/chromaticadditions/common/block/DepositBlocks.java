@@ -1,6 +1,7 @@
 package com.chromatic.chromaticadditions.common.block;
 
 import com.chromatic.chromaticadditions.ChromaticAdditions;
+import com.chromatic.chromaticadditions.common.data.ChromaticTags;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.BlockItem;
@@ -23,7 +24,7 @@ public class DepositBlocks {
         return HERRJOLO_REGISTRATE
                 .block(id, Block::new)
                 .initialProperties(() -> Blocks.IRON_ORE)
-                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .tag(BlockTags.MINEABLE_WITH_PICKAXE, ChromaticTags.ORES)
                 .properties(p -> p.isValidSpawn((state, level, pos, ent) -> false)
                         .strength(3.0f, 5.0f)
                         .requiresCorrectToolForDrops())
@@ -58,4 +59,8 @@ public class DepositBlocks {
     public static BlockEntry<Block> GALENA_DEPOSIT = registerSimpleBlock(
             "Galena Deposit", "galena_deposit",
             "galena_deposit", BlockItem::new);
+
+    public static BlockEntry<Block> LAPIS_DEPOSIT = registerSimpleBlock(
+            "Lapis lazuli Deposit", "lapis_deposit",
+            "lapis_deposit", BlockItem::new);
 }
