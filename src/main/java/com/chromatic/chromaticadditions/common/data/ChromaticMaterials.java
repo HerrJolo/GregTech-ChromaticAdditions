@@ -25,6 +25,10 @@ public class ChromaticMaterials {
     public static Material RIVERMUD;
     public static Material OVERWORLD_ORE_SLURRY;
     public static Material COKE_OVEN_DUST;
+    public static Material CRUDE_LUBRICANT;
+    public static Material GOOD_LUBRICANT;
+    public static Material PERFECTED_LUBRICANT;
+    public static Material INSECTECIDE;
 
     public static void init() {
         MAGNETIC_MINERAL_CLUSTER = new Material.Builder(GTCEu.id("magnetic_mineral_cluster"))
@@ -106,6 +110,26 @@ public class ChromaticMaterials {
         COKE_OVEN_DUST = new Material.Builder(GTCEu.id("coke_oven_brick_dust"))
                 .dust()
                 .color(0xc1bd91)
+                .buildAndRegister();
+
+        CRUDE_LUBRICANT = new Material.Builder(GTCEu.id("crude_lubricant"))
+                .fluid()
+                .color(0xC3C789)
+                .buildAndRegister();
+
+        GOOD_LUBRICANT = new Material.Builder(GTCEu.id("good_lubricant"))
+                .fluid()
+                .color(0xF3FF78)
+                .buildAndRegister();
+
+        PERFECTED_LUBRICANT = new Material.Builder(GTCEu.id("perfected_lubricant"))
+                .fluid()
+                .color(0xF8FFD9)
+                .buildAndRegister();
+
+        INSECTECIDE = new Material.Builder(GTCEu.id("insecticide"))
+                .fluid()
+                .color(0x5C3D9C)
                 .buildAndRegister();
     }
 }
