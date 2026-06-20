@@ -7,6 +7,8 @@
     "chromatic_additions:limonite_deposit",
     "chromatic_additions:magnetite_deposit",
     "chromatic_additions:chalcopyrite_deposit",
-    "chromatic_additions:cassiterite_deposit"
+    "chromatic_additions:cassiterite_deposit",
+    "chromatic_additions:galena_deposit",
+    "chromatic_additions:lapis_deposit"
   ]
 }
