@@ -7,6 +7,7 @@ import com.chromatic.chromaticadditions.common.data.ChromaticRecepieTypes;
 import com.chromatic.chromaticadditions.common.data.armor.DimensionBehaviour;
 import com.chromatic.chromaticadditions.common.item.ChromaticArmor;
 import com.chromatic.chromaticadditions.common.item.ChromaticItems;
+import com.chromatic.chromaticadditions.common.machine.SteamMixer;
 import com.chromatic.chromaticadditions.common.machine.multiblock.part.PartRegistry;
 import com.chromatic.chromaticadditions.common.machine.multiblock.structurs.*;
 
@@ -161,6 +162,7 @@ public class ChromaticAdditions {
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
+        SteamMixer.init();
         HvMultisOreProc.init();
         HvMultis.init();
         Em_Lines.init();
@@ -169,6 +171,7 @@ public class ChromaticAdditions {
         UpgradedMultis.init();
         PrimitiveMultis.init();
         OreSorterMultis.init();
+        GreenHouses.init();
     }
 
     /**

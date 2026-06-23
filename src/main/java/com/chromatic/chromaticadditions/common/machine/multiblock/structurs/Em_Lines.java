@@ -27,6 +27,7 @@ public class Em_Lines {
     // EM_LINE
     public static final MultiblockMachineDefinition ELECTRIC_ASSEMBLY_LINE = HERRJOLO_REGISTRATE
             .multiblock("electric_assembly_line", AssemblyLineMachine::new)
+            .langValue("§uElectric Assembly Line")
             .rotationState(RotationState.ALL)
             .recipeTypes(ChromaticRecepieTypes.EMLINE)
             .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)

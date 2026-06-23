@@ -16,6 +16,8 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
+import net.minecraft.network.chat.Component;
+
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.frameGt;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
@@ -26,6 +28,10 @@ public class HvMultisOreProc {
     // Centrifuge
     public static final MultiblockMachineDefinition Extended_Centrifuge = HERRJOLO_REGISTRATE
             .multiblock("industrial_centrifuge", WorkableElectricMultiblockMachine::new)
+            .langValue("§6Industrial Centrifuge")
+            .tooltips(Component.literal("§7You Spin me right Round"))
+            .tooltips(Component.literal("§7Needs a Rotor to Work"))
+            .tooltips(Component.literal("§7Does only accept one §6Energy Hatch"))
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.CENTRIFUGE_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT, ChromaticRecipeModefiers.SIMPLE_PARALLEL.apply(4))
@@ -55,6 +61,9 @@ public class HvMultisOreProc {
     // Macerator
     public static final MultiblockMachineDefinition Extended_Macerator = HERRJOLO_REGISTRATE
             .multiblock("industrial_macerator", WorkableElectricMultiblockMachine::new)
+            .langValue("§6Industrial Macerator")
+            .tooltips(Component.literal("§7Just Crushing it"))
+            .tooltips(Component.literal("§7Does only accept one §6Energy Hatch"))
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.MACERATOR_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
@@ -85,7 +94,10 @@ public class HvMultisOreProc {
 
     // Extractor
     public static final MultiblockMachineDefinition Extended_Extractor = HERRJOLO_REGISTRATE
-            .multiblock("industrial_squeezer", WorkableElectricMultiblockMachine::new)
+            .multiblock("industrial_extractor", WorkableElectricMultiblockMachine::new)
+            .langValue("§bIndustrial Extractor")
+            .tooltips(Component.literal("§7Will make Apple juice if needed"))
+            .tooltips(Component.literal("§7Does only accept one §6Energy Hatch"))
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.EXTRACTOR_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
@@ -115,6 +127,10 @@ public class HvMultisOreProc {
     // Thermal_Centrifuge
     public static final MultiblockMachineDefinition Extended_Thermal_Centrifuge = HERRJOLO_REGISTRATE
             .multiblock("industrial_thermal_centrifuge", WorkableElectricMultiblockMachine::new)
+            .langValue("§6Industrial Thermal Centrifuge")
+            .tooltips(Component.literal("§7A hot Centrifuge"))
+            .tooltips(Component.literal("§7Needs a Rotor to Work"))
+            .tooltips(Component.literal("§7Does only accept one §6Energy Hatch"))
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.THERMAL_CENTRIFUGE_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT, ChromaticRecipeModefiers.SIMPLE_PARALLEL.apply(4))
@@ -145,6 +161,9 @@ public class HvMultisOreProc {
     // Washer
     public static final MultiblockMachineDefinition Extended_WASHER = HERRJOLO_REGISTRATE
             .multiblock("wet_ore_processor", WorkableElectricMultiblockMachine::new)
+            .langValue("§bWet Ore Processor")
+            .tooltips(Component.literal("§7Does everything with ores and fluids"))
+            .tooltips(Component.literal("§7Does only accept one §6Energy Hatch"))
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.ORE_WASHER_RECIPES, GTRecipeTypes.SIFTER_RECIPES,
                     GTRecipeTypes.CHEMICAL_BATH_RECIPES)
@@ -177,6 +196,9 @@ public class HvMultisOreProc {
     // Electrolyzer
     public static final MultiblockMachineDefinition Extended_ElECTROLYCER = HERRJOLO_REGISTRATE
             .multiblock("industrial_electrolyze", WorkableElectricMultiblockMachine::new)
+            .langValue("§6Industrial Electrolyze")
+            .tooltips(Component.literal("§7Ripping molecules apart"))
+            .tooltips(Component.literal("§7Does only accept one §6Energy Hatch"))
             .rotationState(RotationState.ALL)
             .recipeTypes(GTRecipeTypes.ELECTROLYZER_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)

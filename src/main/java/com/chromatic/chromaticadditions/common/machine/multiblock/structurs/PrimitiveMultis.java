@@ -22,67 +22,68 @@ import static net.minecraft.world.level.block.Blocks.IRON_BLOCK;
 
 public class PrimitiveMultis {
 
-    public static final MultiblockMachineDefinition LARGE_RIVER_PUMP = HERRJOLO_REGISTRATE
-            .multiblock("large_river_pump", WorkableElectricMultiblockMachine::new)
-            .rotationState(RotationState.ALL)
-            .recipeTypes(ChromaticRecepieTypes.LARGERIVERPUMP)
-            .recipeModifiers()
-            .appearanceBlock(GTBlocks.TREATED_WOOD_PLANK)
-            .pattern(definition -> {
-                return FactoryBlockPattern.start()
-                        .aisle("abcccba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
-                        .aisle("bdcccdb", "adaeada", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
-                        .aisle("ccaaacc", "aaaaaaa", "aaaeaaa", "aaaeaaa", "aaaeaaa", "aaaaaaa", "aaaaaaa")
-                        .aisle("ccadacc", "aeadaea", "aaedeaa", "aaedeaa", "aaedeaa", "aaadaaa", "aaadaaa")
-                        .aisle("ccaaacc", "aaaaaaa", "aaaeaaa", "aaaeaaa", "aaaeaaa", "aaaaaaa", "aaaaaaa")
-                        .aisle("bdcccdb", "adaeada", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
-                        .aisle("abcKcba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
-                        .where("K", Predicates.controller(Predicates.blocks(definition.get())))
-                        .where("a", Predicates.any())
-                        .where("b", Predicates.blocks(ChemicalHelper.getBlock(frameGt, TreatedWood)))
-                        .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
-                        .where("c", Predicates.blocks(GTBlocks.CASING_PUMP_DECK.get())
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_INPUT_BUS))
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_BUS))
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_HATCH)))
-                        .where("d", Predicates.blocks(GTBlocks.RUBBER_LOG.get()))
-                        .build();
-            })
-            .workableCasingModel(GTCEu.id("block/treated_wood_planks"),
-                    GTCEu.id("block/multiblock/implosion_compressor"))
-            .register();
-
-    public static final MultiblockMachineDefinition PRIMITIVE_MIXER = HERRJOLO_REGISTRATE
-            .multiblock("primitve_mixer", WorkableElectricMultiblockMachine::new)
-            .rotationState(RotationState.ALL)
-            .recipeTypes(ChromaticRecepieTypes.PRIMITIVEMIXER)
-            .recipeModifiers()
-            .appearanceBlock(GTBlocks.TREATED_WOOD_PLANK)
-            .pattern(definition -> {
-                return FactoryBlockPattern.start()
-                        .aisle(" CCC ", " CGC ", " CGC ", " CSC ", "     ")
-                        .aisle("CBBBC", "CA AC", "C   C", "C S C", "     ")
-                        .aisle("CBBBC", "G I G", "G I G", "SSISS", "  I  ")
-                        .aisle("CBBBC", "CA AC", "C   C", "C S C", "     ")
-                        .aisle(" CKC ", " CGC ", " CGC ", " CSC ", "     ")
-                        .where('K', Predicates.controller(Predicates.blocks(definition.get())))
-                        .where('A', Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
-                        .where('B', Predicates.blocks(Blocks.BRICKS))
-                        .where('I', Predicates.blocks(RUBBER_LOG.get()))
-                        .where('S', Predicates.blocks(ChemicalHelper.getBlock(frameGt, TreatedWood)))
-                        .where('G', Predicates.blocks(Blocks.GLASS))
-                        .where(' ', Predicates.any())
-                        .where('C', Predicates.blocks(TREATED_WOOD_PLANK.get())
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_INPUT_BUS))
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_BUS))
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_HATCH))
-                                .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_INTPUT_HATCH)))
-                        .build();
-            })
-            .workableCasingModel(GTCEu.id("block/treated_wood_planks"),
-                    GTCEu.id("block/multiblock/implosion_compressor"))
-            .register();
-
+    /*
+     * public static final MultiblockMachineDefinition LARGE_RIVER_PUMP = HERRJOLO_REGISTRATE
+     * .multiblock("large_river_pump", WorkableElectricMultiblockMachine::new)
+     * .rotationState(RotationState.ALL)
+     * .recipeTypes(ChromaticRecepieTypes.LARGERIVERPUMP)
+     * .recipeModifiers()
+     * .appearanceBlock(GTBlocks.TREATED_WOOD_PLANK)
+     * .pattern(definition -> {
+     * return FactoryBlockPattern.start()
+     * .aisle("abcccba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
+     * .aisle("bdcccdb", "adaeada", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
+     * .aisle("ccaaacc", "aaaaaaa", "aaaeaaa", "aaaeaaa", "aaaeaaa", "aaaaaaa", "aaaaaaa")
+     * .aisle("ccadacc", "aeadaea", "aaedeaa", "aaedeaa", "aaedeaa", "aaadaaa", "aaadaaa")
+     * .aisle("ccaaacc", "aaaaaaa", "aaaeaaa", "aaaeaaa", "aaaeaaa", "aaaaaaa", "aaaaaaa")
+     * .aisle("bdcccdb", "adaeada", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
+     * .aisle("abcKcba", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa", "aaaaaaa")
+     * .where("K", Predicates.controller(Predicates.blocks(definition.get())))
+     * .where("a", Predicates.any())
+     * .where("b", Predicates.blocks(ChemicalHelper.getBlock(frameGt, TreatedWood)))
+     * .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
+     * .where("c", Predicates.blocks(GTBlocks.CASING_PUMP_DECK.get())
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_INPUT_BUS))
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_BUS))
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_HATCH)))
+     * .where("d", Predicates.blocks(GTBlocks.RUBBER_LOG.get()))
+     * .build();
+     * })
+     * .workableCasingModel(GTCEu.id("block/treated_wood_pla"),
+     * GTCEu.id("block/multiblock/implosion_compressor"))
+     * .register();
+     * 
+     * public static final MultiblockMachineDefinition PRIMITIVE_MIXER = HERRJOLO_REGISTRATE
+     * .multiblock("primitve_mixer", WorkableElectricMultiblockMachine::new)
+     * .rotationState(RotationState.ALL)
+     * .recipeTypes(ChromaticRecepieTypes.PRIMITIVEMIXER)
+     * .recipeModifiers()
+     * .appearanceBlock(GTBlocks.TREATED_WOOD_PLANK)
+     * .pattern(definition -> {
+     * return FactoryBlockPattern.start()
+     * .aisle(" CCC ", " CGC ", " CGC ", " CSC ", "     ")
+     * .aisle("CBBBC", "CA AC", "C   C", "C S C", "     ")
+     * .aisle("CBBBC", "G I G", "G I G", "SSISS", "  I  ")
+     * .aisle("CBBBC", "CA AC", "C   C", "C S C", "     ")
+     * .aisle(" CKC ", " CGC ", " CGC ", " CSC ", "     ")
+     * .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+     * .where('A', Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
+     * .where('B', Predicates.blocks(Blocks.BRICKS))
+     * .where('I', Predicates.blocks(RUBBER_LOG.get()))
+     * .where('S', Predicates.blocks(ChemicalHelper.getBlock(frameGt, TreatedWood)))
+     * .where('G', Predicates.blocks(Blocks.GLASS))
+     * .where(' ', Predicates.any())
+     * .where('C', Predicates.blocks(TREATED_WOOD_PLANK.get())
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_INPUT_BUS))
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_BUS))
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_OUTPUT_HATCH))
+     * .or(Predicates.abilities(ChromaticPartAbility.PRIMITIVE_INTPUT_HATCH)))
+     * .build();
+     * })
+     * .workableCasingModel(GTCEu.id("block/treated_wood_planks"),
+     * GTCEu.id("block/multiblock/implosion_compressor"))
+     * .register();
+     */
     public static final MultiblockMachineDefinition PRIMITIVE_PRESS = HERRJOLO_REGISTRATE
             .multiblock("primitve_press", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)

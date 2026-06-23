@@ -8,6 +8,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+@SuppressWarnings("removal")
 public class ChromaticTags {
 
     public static final TagKey<Item> NETHERMASKS = TagUtil.createItemTag("nether_masks");

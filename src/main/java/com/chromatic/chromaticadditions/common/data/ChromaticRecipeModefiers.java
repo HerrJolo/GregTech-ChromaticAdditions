@@ -1,9 +1,13 @@
 package com.chromatic.chromaticadditions.common.data;
 
+import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.recipe.GTRecipe;
+import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
+import com.gregtechceu.gtceu.utils.GTUtil;
 
 import java.util.function.IntFunction;
 
@@ -31,4 +35,20 @@ public class ChromaticRecipeModefiers {
                     .build();
         };
     };
+
+    public static ModifierFunction TieredParallel(MetaMachine machine, GTRecipe recipe) {
+        int machineTier = GTUtil.getTierByVoltage(RecipeHelper.getRealEUt(recipe).getTotalEU());
+
+        int maxParallels = (int) Math.pow(2, machineTier);
+
+        int parrallels = ParallelLogic.getParallelAmountWithoutEU(machine, recipe, maxParallels);
+
+        if (parrallels == 1) return ModifierFunction.IDENTITY;
+
+        return ModifierFunction.builder()
+                .modifyAllContents(ContentModifier.multiplier(parrallels))
+                .durationMultiplier(1.65)
+                .parallels(parrallels)
+                .build();
+    }
 }

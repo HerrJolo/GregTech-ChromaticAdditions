@@ -14,7 +14,6 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.level.block.Blocks;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.frameGt;
@@ -24,45 +23,46 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class OreSorterMultis {
 
-    // Sorter
-    public static final MultiblockMachineDefinition STEAMESORTER = HERRJOLO_REGISTRATE
-            .multiblock("steam_sorter", WorkableElectricMultiblockMachine::new)
-            .langValue("Steam Ore Sorter")
-            .tooltips(Component.literal("Sorts your ores, just slowly"))
-            .rotationState(RotationState.ALL)
-            .recipeTypes(ChromaticRecepieTypes.SORTER)
-            .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
-            .appearanceBlock(CASING_BRONZE_BRICKS)
-            .pattern(definition -> {
-                return FactoryBlockPattern.start()
-                        .aisle("abbba", "accca", "accca", "addda")
-                        .aisle("bcccb", "ceeec", "cdddc", "ddddd")
-                        .aisle("bcccb", "ceeec", "cdddc", "ddddd")
-                        .aisle("bcccb", "ceeec", "cdddc", "ddddd")
-                        .aisle("abbba", "acKca", "accca", "addda")
-                        .where("K", Predicates.controller(Predicates.blocks(definition.get())))
-                        .where("a", Predicates.blocks(RUBBER_LOG.get()))
-                        .where("b", Predicates.blocks(Blocks.BRICKS))
-                        .where("c", Predicates.blocks(CASING_BRONZE_BRICKS.get())
-                                .or(Predicates.abilities(PartAbility.STEAM_IMPORT_ITEMS).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.STEAM_EXPORT_ITEMS).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.STEAM).setExactLimit(1).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1)))
-                        .where("d", Predicates.any())
-                        .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
-                        .build();
-            })
-            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
-                    GTCEu.id("block/multiblock/implosion_compressor"))
-            .register();
-
+    /*
+     * // Sorter
+     * public static final MultiblockMachineDefinition STEAMESORTER = HERRJOLO_REGISTRATE
+     * .multiblock("steam_sorter", WorkableElectricMultiblockMachine::new)
+     * .langValue("Steam Ore Sorter")
+     * .tooltips(Component.literal("Sorts your ores, just slowly"))
+     * .rotationState(RotationState.ALL)
+     * .recipeTypes(ChromaticRecepieTypes.SORTER)
+     * .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
+     * .appearanceBlock(CASING_BRONZE_BRICKS)
+     * .pattern(definition -> {
+     * return FactoryBlockPattern.start()
+     * .aisle("abbba", "accca", "accca", "addda")
+     * .aisle("bcccb", "ceeec", "cdddc", "ddddd")
+     * .aisle("bcccb", "ceeec", "cdddc", "ddddd")
+     * .aisle("bcccb", "ceeec", "cdddc", "ddddd")
+     * .aisle("abbba", "acKca", "accca", "addda")
+     * .where("K", Predicates.controller(Predicates.blocks(definition.get())))
+     * .where("a", Predicates.blocks(RUBBER_LOG.get()))
+     * .where("b", Predicates.blocks(Blocks.BRICKS))
+     * .where("c", Predicates.blocks(CASING_BRONZE_BRICKS.get())
+     * .or(Predicates.abilities(PartAbility.STEAM_IMPORT_ITEMS).setPreviewCount(1))
+     * .or(Predicates.abilities(PartAbility.STEAM_EXPORT_ITEMS).setPreviewCount(1))
+     * .or(Predicates.abilities(PartAbility.STEAM).setExactLimit(1).setPreviewCount(1))
+     * .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1)))
+     * .where("d", Predicates.any())
+     * .where("e", Predicates.blocks(ChemicalHelper.getBlock(frameGt, Iron)))
+     * .build();
+     * })
+     * .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
+     * GTCEu.id("block/multiblock/implosion_compressor"))
+     * .register();
+     */
     // Sorter
     public static final MultiblockMachineDefinition SORTER = HERRJOLO_REGISTRATE
             .multiblock("sorter", WorkableElectricMultiblockMachine::new)
             .langValue("§6ORE Sorter")
-            .tooltips(Component.literal("Sorts ore depending on weight, optics and haptics"))
-            .tooltips(Component.literal("Does only accept §6One §fEnergy Hatch"))
-            .tooltips(Component.literal("Does not accept Parallel Hatches"))
+            .tooltips(Component.literal("§fSorts ore depending on weight, optics and haptics"))
+            .tooltips(Component.literal("§fDoes only accept §6One §fEnergy Hatch"))
+            .tooltips(Component.literal("§fDoes not accept Parallel Hatches"))
             .rotationState(RotationState.ALL)
             .recipeTypes(ChromaticRecepieTypes.SORTER)
             .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
@@ -96,7 +96,7 @@ public class OreSorterMultis {
     // Large Sorter
     public static final MultiblockMachineDefinition LARGE_SORTER = HERRJOLO_REGISTRATE
             .multiblock("large_sorter", WorkableElectricMultiblockMachine::new)
-            .langValue("§1Large Ore Sorter")
+            .langValue("§9Large Ore Sorter")
             .tooltips(Component.literal("Sorts ore depending on weight, optics and haptics more efficiently"))
             .tooltips(Component.literal("Does only accept §6One §fEnergy Hatch"))
             .tooltips(Component.literal("Does accept Parallel Hatches"))

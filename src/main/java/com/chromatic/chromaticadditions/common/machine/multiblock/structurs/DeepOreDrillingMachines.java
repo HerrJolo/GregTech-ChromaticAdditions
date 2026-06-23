@@ -26,10 +26,11 @@ public class DeepOreDrillingMachines {
 
     public static MultiblockMachineDefinition THE_MINER = HERRJOLO_REGISTRATE
             .multiblock("the_miner", WorkableElectricMultiblockMachine::new)
-            .langValue("§5Large Biome Miner Extractor")
-            .tooltips(Component.literal("Digs in to deep mineral deposits and extracts raw unrefined mineral Clusters"))
-            .tooltips(Component.literal("Does only accept §6One §fEnergy Hatch"))
-            .tooltips(Component.literal("Does not accept Parallel Hatches"))
+            .langValue("§uLarge Biome Miner Extractor")
+            .tooltips(
+                    Component.literal("§7Digs in to deep mineral deposits and extracts raw unrefined mineral Clusters"))
+            .tooltips(Component.literal("§7Does only accept §6One §7Energy Hatch"))
+            .tooltips(Component.literal("§7Does not accept Parallel Hatches"))
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ChromaticRecepieTypes.THEMINER)
             .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
