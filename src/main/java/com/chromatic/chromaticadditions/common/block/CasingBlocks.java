@@ -49,4 +49,8 @@ public class CasingBlocks {
     public static BlockEntry<Block> DRILLING_CASING = registerSimpleBlock(
             "Drilling Pipe Casing", "drilling_casing",
             "drilling_casing", BlockItem::new);
+
+    public static BlockEntry<Block> HERMETIC_CASING = registerSimpleBlock(
+            "Hermetic Casing", "hermetic_casing",
+            "hermeticcasing", BlockItem::new);
 }
