@@ -1,7 +1,6 @@
 package com.chromatic.chromaticadditions;
 
 import com.chromatic.chromaticadditions.common.data.recepies.BiomMinerRecepies;
-import com.chromatic.chromaticadditions.common.data.recepies.RiverPumpRecipec;
 import com.chromatic.chromaticadditions.common.data.recepies.SorterRecipes;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
@@ -38,7 +37,6 @@ public class GregTech_Chromatic_Additions implements IGTAddon {
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         BiomMinerRecepies.init(provider);
         SorterRecipes.init(provider);
-        RiverPumpRecipec.init(provider);
     }
 
     @Override
