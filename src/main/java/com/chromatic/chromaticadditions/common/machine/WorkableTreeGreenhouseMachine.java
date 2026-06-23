@@ -1,7 +1,5 @@
 package com.chromatic.chromaticadditions.common.machine;
 
-import com.chromatic.chromaticadditions.common.data.ChromaticMaterials;
-
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -23,24 +21,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 
 @Slf4j
-public class WorkableFruitedGreenhouseMachine extends WorkableElectricMultiblockMachine {
+public class WorkableTreeGreenhouseMachine extends WorkableElectricMultiblockMachine {
 
-    public WorkableFruitedGreenhouseMachine(IMachineBlockEntity holder, Object... args) {
+    public WorkableTreeGreenhouseMachine(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
     }
 
     private int RunningTimer = 0;
 
-    protected boolean FertilizerBoost = false;
-
     private static final FluidStack WATER_STACK = GTMaterials.Water.getFluid(10);
-
-    private static final FluidStack INSECTICIDE_STACK = ChromaticMaterials.INSECTECIDE.getFluid(1);
 
     private static final ItemStack FERTILIZER_STACK = new ItemStack(GTItems.FERTILIZER, 2);
 
+    protected boolean FertilizerBoost = false;
+
     protected GTRecipe getFluidRecipe() {
-        return GTRecipeBuilder.ofRaw().inputFluids(WATER_STACK, INSECTICIDE_STACK).perTick(false).buildRawRecipe();
+        return GTRecipeBuilder.ofRaw().inputFluids(WATER_STACK).buildRawRecipe();
     }
 
     protected GTRecipe getBoostRecipe() {
@@ -48,7 +44,7 @@ public class WorkableFruitedGreenhouseMachine extends WorkableElectricMultiblock
     }
 
     public static ModifierFunction recipeModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) {
-        if (!(machine instanceof WorkableFruitedGreenhouseMachine GreenhouseMachine)) {
+        if (!(machine instanceof WorkableTreeGreenhouseMachine GreenhouseMachine)) {
             return RecipeModifier.nullWrongType(WorkableFruitedGreenhouseMachine.class, machine);
         }
         // has lubricant
@@ -82,6 +78,7 @@ public class WorkableFruitedGreenhouseMachine extends WorkableElectricMultiblock
                             .isSuccess();
 
         }
+
         RunningTimer++;
         if (RunningTimer > 20) RunningTimer %= 20; // reset once every hour of running
 

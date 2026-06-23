@@ -21,6 +21,8 @@ public class ChromaticRecepieTypes {
     public static GTRecipeType LARGERIVERPUMP;
     public static GTRecipeType PRIMITIVEMIXER;
     public static GTRecipeType PRIMITIVEPRESS;
+    public static GTRecipeType FRUITEGREENHOUSE;
+    public static GTRecipeType TREEGREENHOUSE;
     public static GTRecipeType PRIMITIVESMELTER;
 
     public static void init() {
@@ -82,5 +84,19 @@ public class ChromaticRecepieTypes {
                 .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.MIXER);
+
+        TREEGREENHOUSE = register("tree_greenhouse", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(1, 3, 0, 0)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.COOLING);
+
+        FRUITEGREENHOUSE = register("fruit_greenhouse", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(2, 3, 0, 0)
+                .setSlotOverlay(false, false, GuiTextures.CENTRIFUGE_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.COOLING);
     }
 }
