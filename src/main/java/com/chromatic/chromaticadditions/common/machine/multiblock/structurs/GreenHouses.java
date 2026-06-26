@@ -12,14 +12,22 @@ import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
+import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
+import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderHelper;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 
+import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Blocks;
+import org.joml.Vector3f;
+
+import java.util.List;
+import java.util.Vector;
 
 import static com.chromatic.chromaticadditions.ChromaticAdditions.HERRJOLO_REGISTRATE;
 
@@ -36,8 +44,7 @@ public class GreenHouses {
             .recipeTypes(ChromaticRecepieTypes.FRUITEGREENHOUSE)
             .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT, WorkableFruitedGreenhouseMachine::recipeModifier)
             .appearanceBlock(CasingBlocks.HERMETIC_CASING)
-            .pattern(definition -> {
-                return FactoryBlockPattern.start()
+            .pattern(definition -> FactoryBlockPattern.start()
                         .aisle("abbba", "addda", "abbba", "addda", "abbba")
                         .aisle("beeeb", "daaad", "beeeb", "daaad", "bfffb")
                         .aisle("beeeb", "daaad", "beeeb", "daaad", "bfffb")
@@ -52,13 +59,33 @@ public class GreenHouses {
                                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1)))
                         .where("d", Predicates.blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
-                        .where("e", Predicates.blocks(Blocks.DIRT))
+                        .where("e", Predicates.blocks(Blocks.DIRT)
+                                .or(Predicates.blocks(Blocks.GRASS_BLOCK)))
                         .where("f", Predicates.blocks(GTBlocks.FILTER_CASING.get()))
-                        .build();
-            })
-            .workableCasingModel(ChromaticAdditions.id("block/hermeticcasing"),
-                    GTCEu.id("block/multiblock/advanced_processing_array"))
+                        .build())
+            .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
+            .model(GTMachineModels.createWorkableCasingMachineModel(ChromaticAdditions.id("block/hermeticcasing"),GTCEu.id("block/multiblock/advanced_processing_array"))
+                    .andThen(b -> b.addDynamicRenderer(() -> DynamicRenderHelper.makeGrowingPlantRender(List.of( new Vector3f(-1, 1, -1),
+                                                                                                                                                    new Vector3f(-1, 1, -2),
+                                                                                                                                                    new Vector3f(-1, 1, -3),
+                                                                                                                                                    new Vector3f(0, 1, -1),
+                                                                                                                                                    new Vector3f(0, 1, -2),
+                                                                                                                                                    new Vector3f(0, 1, -3),
+                                                                                                                                                    new Vector3f(1, 1, -1),
+                                                                                                                                                    new Vector3f(1, 1, -2),
+                                                                                                                                                    new Vector3f(1, 1, -3),
+                                                                                                                                                    new Vector3f(-1, 3, -1),
+                                                                                                                                                    new Vector3f(-1, 3, -2),
+                                                                                                                                                    new Vector3f(-1, 3, -3),
+                                                                                                                                                    new Vector3f(0, 3, -1),
+                                                                                                                                                    new Vector3f(0, 3, -2),
+                                                                                                                                                    new Vector3f(0, 3, -3),
+                                                                                                                                                    new Vector3f(1, 3, -1),
+                                                                                                                                                    new Vector3f(1, 3, -2),
+                                                                                                                                                    new Vector3f(1, 3, -3))))))
             .register();
+
+
 
     public static final MultiblockMachineDefinition TREE_GREENHOUSE = HERRJOLO_REGISTRATE
             .multiblock("tree_greenhouse", WorkableTreeGreenhouseMachine::new)
