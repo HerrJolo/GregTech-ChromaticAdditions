@@ -1,5 +1,6 @@
 package com.chromatic.chromaticadditions.common.data;
 
+import com.chromatic.chromaticadditions.common.item.ChromaticFlags;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
@@ -29,6 +30,7 @@ public class ChromaticMaterials {
     public static Material GOOD_LUBRICANT;
     public static Material PERFECTED_LUBRICANT;
     public static Material INSECTECIDE;
+    public static Material HARDENDSTEEL;
 
     public static void init() {
         MAGNETIC_MINERAL_CLUSTER = new Material.Builder(GTCEu.id("magnetic_mineral_cluster"))
@@ -131,5 +133,6 @@ public class ChromaticMaterials {
                 .fluid()
                 .color(0x5C3D9C)
                 .buildAndRegister();
+
     }
 }

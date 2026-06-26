@@ -172,6 +172,8 @@ public class ChromaticAdditions {
         PrimitiveMultis.init();
         OreSorterMultis.init();
         GreenHouses.init();
+        ChromaticCombustionEngine.init();
+        ChromaticTurbines.init();
     }
 
     /**

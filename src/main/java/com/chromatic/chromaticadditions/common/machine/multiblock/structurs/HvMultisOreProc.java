@@ -4,6 +4,7 @@ import com.chromatic.chromaticadditions.ChromaticAdditions;
 import com.chromatic.chromaticadditions.common.block.CasingBlocks;
 import com.chromatic.chromaticadditions.common.data.ChromaticRecipeModefiers;
 
+import com.chromatic.chromaticadditions.common.machine.WorkableChromaticEngines;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
